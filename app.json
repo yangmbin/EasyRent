@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/housedetail/housedetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "公寓列表",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,96 @@
+<!--pages/main/main.wxml-->
+<view class="page-body">
+
+  <!--Tab部分  -->
+  <view style="position: fixed;width:100%;z-index:1;">
+    <!--Tab项  -->
+    <view style="top: 0;width: 100%;height:40px;display: flex;flex-direction: row; ">
+      <view style="width:50%;height:100%;background-color:{{!tab[0] ? '#fff' : '#F0F0F0'}};flex-direction:row;display:flex;justify-content:center;align-items:center;" bindtap="clickTab" id="1">
+        <text style="color:#585858;font-size:12px;">城市</text>
+        <image style="width:15px;height:15px;margin-left:5px;" src="{{!tab[0] ? '../images/icon_up.png' : '../images/icon_down.png'}}"></image>
+      </view>
+      <view style="width:50%;height:100%;background-color:{{!tab[1] ? '#fff' : '#F0F0F0'}};flex-direction:row;display:flex;justify-content:center;align-items:center;" bindtap="clickTab" id="2">
+        <text style="color:#585858;font-size:12px;">区域</text>
+        <image style="width:15px;height:15px;margin-left:5px;" src="{{!tab[1] ? '../images/icon_up.png' : '../images/icon_down.png'}}"></image>
+      </view>
+      <view style="width:50%;height:100%;background-color:{{!tab[2] ? '#fff' : '#F0F0F0'}};flex-direction:row;display:flex;justify-content:center;align-items:center;" bindtap="clickTab" id="3">
+        <text style="color:#585858;font-size:12px;">价格</text>
+        <image style="width:15px;height:15px;margin-left:5px;" src="{{!tab[2] ? '../images/icon_up.png' : '../images/icon_down.png'}}"></image>
+      </view>
+    </view>
+
+    <!--tab展开列表  -->
+    <view style="font-size:12px;text-align:center;background:#fff;overflow:hidden;padding-bottom:26rpx;" hidden="{{tab[0]}}">
+      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentCityIndex==index?'#F17403':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentCityIndex==index?'#F17403':'#585858'}};" wx:for="{{cityList}}" wx:for-item="city" wx:for-index="index" bindtap="clickCityItem" id="{{index}}">{{city}}</text>
+    </view>
+    <view style="font-size:12px;text-align:center;background:#fff;overflow:hidden;padding-bottom:26rpx;" hidden="{{tab[1]}}">
+      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentRegionIndex==index?'#F17403':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentRegionIndex==index?'#F17403':'#585858'}};" wx:for="{{regionList}}" wx:for-item="region" wx:for-index="index" bindtap="clickRegionItem" id="{{index}}">{{region}}</text>
+    </view>
+    <view style="font-size:12px;text-align:center;background:#fff;overflow:hidden;padding-bottom:26rpx;" hidden="{{tab[2]}}">
+      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentPriceIndex==index?'#F17403':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentPriceIndex==index?'#F17403':'#585858'}};" wx:for="{{priceList}}" wx:for-item="price" wx:for-index="index" bindtap="clickPriceItem" id="{{index}}">{{price}}</text>
+    </view>
+
+  </view>
+
+
+  <!--列表部分  -->
+  <view style="position:absolute;z-index:0;">
+    <!--空白区域，设置列表和Tab的边距，防止覆盖  -->
+    <view style="margin-top:50px;"></view>
+
+    <!--循环列表  -->
+    <view class="lll" style="margin: 20rpx;padding:20rpx;background:#ffffff;" wx:for="{{list}}" wx:for-item="item" data-title="{{item.title}}" wx:for-index="key">
+      <view bindtap="bindViewTap" id="{{key}}">
+        <image style="width: 100%;height: 220px;" src="{{imageUrl + item.firstImage}}" mode="aspectFill"></image>
+        <view class="eee">
+          <!-- <view style="margin:55px;font-size:8px"> 地址:{{item.address}}</view>
+      <view style="margin:55px;color:red;font-size:6px"> 出租类型:{{item.renttype}}</view>
+      <view style="height:1px;width:100%;background:#00CCFF;"></view> -->
+
+          <view style="margin-bottom:5px;">
+            <text style="font-weight:bold;font-size:15px;display:table-cell;vertical-align:middle;width:100%">{{item.address}}</text>
+            <text style="font-weight:bold;font-size:20px;display:table-cell;vertical-align:middle;color:#F17403;">¥{{item.minprice}}~{{item.maxprice}}</text>
+          </view>
+
+          <view style="flex-direction:row;display:flex;">
+            <view wx:if="{{item.installation_wifi == 1}}" style="flex-direction:column;display:flex;margin-right:15px;justify-content:center;align-items:center;">
+              <image style="width:15px;height:15px;" src="../images/icon_wifi.png"></image>
+              <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">无线</text>
+            </view>
+            <view wx:if="{{item.installation_kitchen == 1}}" style="flex-direction:column;display:flex;margin-right:15px;align-items:center;">
+              <image style="width:15px;height:15px;" src="../images/icon_kitchen.png"></image>
+              <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">厨房</text>
+            </view>
+            <view wx:if="{{item.installation_hoods == 1}}" style="flex-direction:column;display:flex;margin-right:15px;align-items:center;">
+              <image style="width:15px;height:15px;" src="../images/icon_hoods.png"></image>
+              <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">油烟机</text>
+            </view>
+            <view wx:if="{{item.installation_water_heater == 1}}" style="flex-direction:column;display:flex;margin-right:15px;align-items:center;">
+              <image style="width:15px;height:15px;" src="../images/icon_water_heater.png"></image>
+              <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">热水器</text>
+            </view>
+            <view wx:if="{{item.installation_washer == 1}}" style="flex-direction:column;display:flex;margin-right:15px;align-items:center;">
+              <image style="width:15px;height:15px;" src="../images/icon_washer.png"></image>
+              <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">洗衣机</text>
+            </view>
+            <view wx:if="{{item.installation_toilet == 1}}" style="flex-direction:column;display:flex;margin-right:15px;align-items:center;">
+              <image style="width:15px;height:15px;" src="../images/icon_toilet.png"></image>
+              <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">卫生间</text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="tips1">
+      <view wx:if="{{loadMoreText}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+        <text style="font-size:15px;color:#8a8a8a;margin-bottom:20rpx;">正在加载中...</text>
+      </view>
+      <view wx:if="{{loadMoreComplete}}" style="background-color:#FFFFFF;">
+        <!-- <text>没有更多内容了</text> -->
+        <image style="width: 100%;height: 100px;" src="../images/bottom_load_over.jpg" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+</view>
