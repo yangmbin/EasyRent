@@ -21,7 +21,7 @@
         <text style="font-size:13px;color:#6d6d6d;margin-left:10px;margin-right:10px;">公寓类型：{{detail.renttype}}\n</text>
         <view style="flex-direction:row;display:flex;align-items:center;">
           <text style="font-size:13px;color:#6d6d6d;margin-left:10px;margin-right:10px;" bindtap="openMap">地址：{{detail.city}} {{detail.region}} {{detail.address}}</text>
-          <image style="width:15px;height:15px;" src="../images/icon_location.png"></image>
+          <image style="width:15px;height:15px;" src="../images/icon_location.png" mode="aspectFill"></image>
         </view>
       </view>
 
