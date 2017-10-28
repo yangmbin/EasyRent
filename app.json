@@ -1,14 +1,41 @@
 {
   "pages": [
-    "pages/main/main",
+    "pages/mainpage/mainpage",
+    "pages/houselist/houselist",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/housedetail/housedetail"
+    "pages/housedetail/housedetail",
+    "pages/community/community"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "公寓列表",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFE3B6",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/mainpage/mainpage",
+        "iconPath": "pages/images/bottom_tab_1_nomal.png",
+        "selectedIconPath": "pages/images/bottom_tab_1_press.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/houselist/houselist",
+        "iconPath": "pages/images/bottom_tab_2_nomal.png",
+        "selectedIconPath": "pages/images/bottom_tab_2_press.png",
+        "text": "公寓"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "iconPath": "pages/images/bottom_tab_3_nomal.png",
+        "selectedIconPath": "pages/images/bottom_tab_3_press.png",
+        "text": "社区"
+      }
+    ]
   }
 }

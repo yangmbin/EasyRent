@@ -1,0 +1,4 @@
+<!--pages/mainpage/mainpage.wxml-->
+<view>
+  <image style="width:100%;" src="../images/mainpage_bottom.jpg" mode="widthFix" />
+</view>
