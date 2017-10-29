@@ -21,13 +21,13 @@
 
     <!--tab展开列表  -->
     <view style="font-size:12px;text-align:center;background:#fff;overflow:hidden;padding-bottom:26rpx;" hidden="{{tab[0]}}">
-      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentCityIndex==index?'#FFE3B6':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentCityIndex==index?'#FFE3B6':'#585858'}};" wx:for="{{cityList}}" wx:for-item="city" wx:for-index="index" bindtap="clickCityItem" id="{{index}}">{{city}}</text>
+      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentCityIndex==index?'#f2a13a':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentCityIndex==index?'#f2a13a':'#585858'}};" wx:for="{{cityList}}" wx:for-item="city" wx:for-index="index" bindtap="clickCityItem" id="{{index}}">{{city}}</text>
     </view>
     <view style="font-size:12px;text-align:center;background:#fff;overflow:hidden;padding-bottom:26rpx;" hidden="{{tab[1]}}">
-      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentRegionIndex==index?'#FFE3B6':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentRegionIndex==index?'#FFE3B6':'#585858'}};" wx:for="{{regionList}}" wx:for-item="region" wx:for-index="index" bindtap="clickRegionItem" id="{{index}}">{{region}}</text>
+      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentRegionIndex==index?'#f2a13a':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentRegionIndex==index?'#f2a13a':'#585858'}};" wx:for="{{regionList}}" wx:for-item="region" wx:for-index="index" bindtap="clickRegionItem" id="{{index}}">{{region}}</text>
     </view>
     <view style="font-size:12px;text-align:center;background:#fff;overflow:hidden;padding-bottom:26rpx;" hidden="{{tab[2]}}">
-      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentPriceIndex==index?'#FFE3B6':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentPriceIndex==index?'#FFE3B6':'#585858'}};" wx:for="{{priceList}}" wx:for-item="price" wx:for-index="index" bindtap="clickPriceItem" id="{{index}}">{{price}}</text>
+      <text style="width:210rpx;height:50rpx;line-height:50rpx;float:left;border: solid 1px {{currentPriceIndex==index?'#f2a13a':'#F0F0F0'}};margin:20rpx 0 0 26rpx;color:{{currentPriceIndex==index?'#f2a13a':'#585858'}};" wx:for="{{priceList}}" wx:for-item="price" wx:for-index="index" bindtap="clickPriceItem" id="{{index}}">{{price}}</text>
     </view>
 
   </view>
@@ -49,7 +49,7 @@
 
           <view style="margin-bottom:5px;">
             <text style="font-weight:bold;font-size:15px;display:table-cell;vertical-align:middle;width:100%">{{item.address}}</text>
-            <text style="font-weight:bold;font-size:20px;display:table-cell;vertical-align:middle;color:#FFE3B6;">¥{{item.minprice}}~{{item.maxprice}}</text>
+            <text style="font-weight:bold;font-size:20px;display:table-cell;vertical-align:middle;color:#f2a13a;">¥{{item.minprice}}~{{item.maxprice}}</text>
           </view>
 
           <view style="flex-direction:row;display:flex;">
