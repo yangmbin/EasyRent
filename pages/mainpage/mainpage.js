@@ -1,22 +1,22 @@
 // pages/mainpage/mainpage.js
+var networkUtil = require('../../utils/networkUtil.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bannerList: ['http://img5.imgtn.bdimg.com/it/u=2937096958,2678507117&fm=27&gp=0.jpg',
-      'http://img0.imgtn.bdimg.com/it/u=1502841830,297430462&fm=27&gp=0.jpg'],
-    recommentList: ['http://img1.imgtn.bdimg.com/it/u=521695002,777815227&fm=27&gp=0.jpg',
-      'http://img4.imgtn.bdimg.com/it/u=3226882641,4141947605&fm=27&gp=0.jpg',
-      'http://img3.imgtn.bdimg.com/it/u=945732452,4268138441&fm=27&gp=0.jpg',
-      'http://img2.imgtn.bdimg.com/it/u=389035844,2248915236&fm=27&gp=0.jpg']
+    imageUrl: getApp().globalData.imageUrl,
+    bannerUrl: 'http://localhost:5000/get_banner_house_list',
+    recommendUrl: 'http://localhost:5000/get_recommend_house_list',
+    bannerList: [],
+    recommendList: []
   },
 
   /**
    * 查看更多
    */
-  viewMore: function() {
+  viewMore: function () {
     wx.switchTab({
       url: '../../pages/houselist/houselist',
     });
@@ -26,8 +26,72 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    });
+    var that = this;
+    // 参数
+    var params = {};
+    // 请求banner公寓
+    networkUtil._get(that.data.bannerUrl,
+      function (res) {
+        // 获取第一个图片，分割字符串
+        var result = res.data;
+        for (var i = 0; i < result.length; i++) {
+          result[i].firstImage = result[i].images.split(",")[0];
+        }
+        that.setData({
+          bannerList: res.data
+        });
 
+        // 请求推荐公寓
+        networkUtil._get(that.data.recommendUrl,
+          function (res) {
+            // 获取第一个图片，分割字符串
+            var result = res.data;
+            for (var i = 0; i < result.length; i++) {
+              result[i].firstImage = result[i].images.split(",")[0];
+            }
+            that.setData({
+              recommendList: res.data
+            });
+            wx.hideLoading();
+          }),
+          function (res) {
+            wx.hideLoading();
+          }
+          // end
+      }),
+      function (res) {
+        wx.hideLoading();
+      }
   },
+
+  /**
+   * 点击banner图
+   */
+  clickBanner: function(e) {
+    console.log(e.currentTarget.id);
+    var index = e.currentTarget.id;
+    var detail = JSON.stringify(this.data.bannerList[index]);
+    wx.navigateTo({
+      url: '../housedetail/housedetail?detail=' + detail
+    })
+  },
+
+
+  /**
+   * 点击推荐图
+   */
+  clickRecommend: function(e) {
+    console.log(e.currentTarget.id);
+    var index = e.currentTarget.id;
+    var detail = JSON.stringify(this.data.recommendList[index]);
+    wx.navigateTo({
+      url: '../housedetail/housedetail?detail=' + detail
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

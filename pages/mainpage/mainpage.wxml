@@ -2,9 +2,9 @@
 <view>
   <!--主页banner图  -->
   <swiper style="width:100%;height:180px;" indicator-dots="true" autoplay="true" interval="3000" duration="500" indicator-color="#FFFFFF" indicator-active-color="#FFE3B6">
-    <block wx:for="{{bannerList}}" wx:for-item="item">
+    <block wx:for="{{bannerList}}" wx:for-item="item" wx:for-index="index">
       <swiper-item style="width:100%;height:220px;">
-        <image style="width:100%;height:100%" src="{{item}}" mode="aspectFill" />
+        <image bindtap="clickBanner" id="{{index}}" style="width:100%;height:100%" src="{{imageUrl + item.image}}" mode="aspectFill" />
       </swiper-item>
     </block>
   </swiper>
@@ -22,12 +22,12 @@
     </view>
   </view>
   <view style="background-color:white;padding:0px 10px 0px 10px;flex-direction:row;display:flex;">
-    <image style="width:50%;height:120px;margin-right:5px;" src="{{recommentList[0]}}" mode="aspectFill"></image>
-    <image style="width:50%;height:120px;margin-left:5px;" src="{{recommentList[1]}}" mode="aspectFill"></image>
+    <image bindtap="clickRecommend" id="0" wx:if="{{recommendList[0].image}}" style="width:50%;height:120px;margin-right:5px;" src="{{imageUrl + recommendList[0].image}}" mode="aspectFill"></image>
+    <image bindtap="clickRecommend" id="1" wx:if="{{recommendList[1].image}}" style="width:50%;height:120px;margin-left:5px;" src="{{imageUrl + recommendList[1].image}}" mode="aspectFill"></image>
   </view>
   <view style="background-color:white;padding:10px 10px 10px 10px;flex-direction:row;display:flex;">
-    <image style="width:50%;height:120px;margin-right:5px;" src="{{recommentList[2]}}" mode="aspectFill"></image>
-    <image style="width:50%;height:120px;margin-left:5px;" src="{{recommentList[3]}}" mode="aspectFill"></image>
+    <image bindtap="clickRecommend" id="2" wx:if="{{recommendList[2].image}}" style="width:50%;height:120px;margin-right:5px;" src="{{imageUrl + recommendList[2].image}}" mode="aspectFill"></image>
+    <image bindtap="clickRecommend" id="3" wx:if="{{recommendList[3].image}}" style="width:50%;height:120px;margin-left:5px;" src="{{imageUrl + recommendList[3].image}}" mode="aspectFill"></image>
   </view>
 
 
