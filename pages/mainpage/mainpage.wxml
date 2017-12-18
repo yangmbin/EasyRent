@@ -9,7 +9,7 @@
     </block>
   </swiper>
   <view style="padding:15px 10px 15px 10px;background-color:white">
-    <view style="font-size:15px;color:#0e0e0e">贵漂公寓</view>
+    <view style="font-size:15px;color:#0e0e0e">享寓</view>
     <view style="font-size:12px;color:#727272">为你准备品质公寓 从这里开始</view>
   </view>
 
