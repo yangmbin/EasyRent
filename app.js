@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    imageUrl: "http://oxcptmnzi.bkt.clouddn.com/"
+    imageUrl: "http://oos.guipiaoke.com/"
   }
 })

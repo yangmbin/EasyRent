@@ -2,8 +2,6 @@
   "pages": [
     "pages/mainpage/mainpage",
     "pages/houselist/houselist",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/housedetail/housedetail",
     "pages/community/community"
   ],
