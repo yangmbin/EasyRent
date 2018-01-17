@@ -30,49 +30,49 @@
         <text style="font-size:15px;">公寓设施</text>
       </view>
       <view class="flex-row margin-tb-10" wx:for="{{installation_item_list}}" wx:for-item="item">
-        <view wx:if="{{item.item0}}"  class="flex-column-center" style="width:20%;">
+        <view wx:if="{{item.item0}}" class="flex-column-center" style="width:20%;">
           <image class="wd-30px" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">{{item.item0}}</text>
+          <text class="right-icon-text">{{item.item0}}</text>
         </view>
-        <view wx:if="{{item.item1}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">{{item.item1}}</text>
+        <view wx:if="{{item.item1}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">{{item.item1}}</text>
         </view>
-        <view wx:if="{{item.item2}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">{{item.item2}}</text>
+        <view wx:if="{{item.item2}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">{{item.item2}}</text>
         </view>
-        <view wx:if="{{item.item3}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">{{item.item3}}</text>
+        <view wx:if="{{item.item3}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">{{item.item3}}</text>
         </view>
-        <view wx:if="{{item.item4}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">{{item.item4}}</text>
+        <view wx:if="{{item.item4}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">{{item.item4}}</text>
         </view>
       </view>
       <!--公寓设施 end -->
 
       <!--付款方式  -->
-      <view style="background-color:#eeeeee;padding-left:10px;padding-top:6px;padding-bottom:6px;">
+      <view class="title-detail-view">
         <text style="font-size:15px;">付款方式</text>
       </view>
-      <view style="flex-direction:row;display:flex;margin-top:10px;margin-bottom:10px;">
-        <view wx:if="{{detail.pay_month == 1}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">月付</text>
+      <view class="flex-row margin-tb-10">
+        <view wx:if="{{detail.pay_month == 1}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">月付</text>
         </view>
-        <view wx:if="{{detail.pay_season == 1}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">季付</text>
+        <view wx:if="{{detail.pay_season == 1}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">季付</text>
         </view>
-        <view wx:if="{{detail.pay_half == 1}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">半年付</text>
+        <view wx:if="{{detail.pay_half == 1}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">半年付</text>
         </view>
-        <view wx:if="{{detail.pay_year == 1}}" style="flex-direction:column;display:flex;justify-content:center;align-items:center;width:20%;">
-          <image style="width:30px;height:30px;" src="../images/icon_right.png"></image>
-          <text style="font-size:10px;color:#8a8a8a;margin-top:2px;">年付</text>
+        <view wx:if="{{detail.pay_year == 1}}" class="flex-column-center" style="width:20%;">
+          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <text class="right-icon-text">年付</text>
         </view>
       </view>
       <!--付款方式 end -->
@@ -86,9 +86,9 @@
   </view>
 
   <!--底部固定布局  -->
-  <view style="position: fixed;bottom: 0;width: 100%;height:50px;display: flex;flex-direction: row; ">
-    <image style="width:50%;height:100%;background-color:#E5E5E5;" src="../images/bottom_contact.jpg" mode="aspectFit"></image>
-    <view style="width:50%;height:100%;background-color:#FFE3B6;flex-direction:column;display:flex;justify-content:center;align-items:center;" bindtap="dial">
+  <view class="bottom-dial">
+    <image class="bottom-dial-image" src="../images/bottom_contact.jpg" mode="aspectFit"></image>
+    <view class="bottom-dial-btn" bindtap="dial">
       <text style="color:black;font-size:20px;">立即预约</text>
     </view>
   </view>

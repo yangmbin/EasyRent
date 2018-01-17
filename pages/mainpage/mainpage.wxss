@@ -1,1 +1,31 @@
 /* pages/mainpage/mainpage.wxss */
+.banner-bottom-view {
+  padding:15px 10px 15px 10px;background-color:white;
+}
+.banner-bottom-view-text-head {
+  font-size:15px;color:#0e0e0e;
+}
+.banner-bottom-view-text-tail {
+  font-size:12px;color:#727272;
+}
+.recommend-view {
+  margin-top:5px;background-color:white;padding:15px 10px 15px 10px;flex-direction:row;display:flex;align-items:center;
+}
+.recommend-view-title {
+  font-weight:bold;font-size:15px;color:#0e0e0e;width:50%;
+}
+.recommend-view-more {
+  flex-direction:row;display:flex;align-items:center;width:50%;justify-content:flex-end;
+}
+.recommend-view-more-text {
+  font-size:14px;color:#727272;
+}
+.recommend-view-item-top {
+  background-color:white;padding:0px 10px 0px 10px;flex-direction:row;display:flex;
+}
+.recommend-view-item-bottom {
+  background-color:white;padding:10px 10px 10px 10px;flex-direction:row;display:flex;
+}
+.bottom-img {
+  width:100%;margin-top:5px;
+}

@@ -8,29 +8,29 @@
       </swiper-item>
     </block>
   </swiper>
-  <view style="padding:15px 10px 15px 10px;background-color:white">
-    <view style="font-size:15px;color:#0e0e0e">享寓</view>
-    <view style="font-size:12px;color:#727272">为你准备品质公寓 从这里开始</view>
+  <view class="banner-bottom-view">
+    <view class="banner-bottom-view-text-head">享寓</view>
+    <view class="banner-bottom-view-text-tail">为你准备品质公寓 从这里开始</view>
   </view>
 
   <!--精选公寓 4个  -->
-  <view style="margin-top:5px;background-color:white;padding:15px 10px 15px 10px;flex-direction:row;display:flex;align-items:center;">
-    <view style="font-weight:bold;font-size:15px;color:#0e0e0e;width:50%;">精选公寓</view>
-    <view style="flex-direction:row;display:flex;align-items:center;width:50%;justify-content:flex-end;" bindtap="viewMore">
-      <text style="font-size:14px;color:#727272;">查看更多</text>
+  <view class="recommend-view">
+    <view class="recommend-view-title">精选公寓</view>
+    <view class="recommend-view-more" bindtap="viewMore">
+      <text class="recommend-view-more-text">查看更多</text>
       <image style="width:16px;height:16px;" src="../images/arrow_right.png"></image>
     </view>
   </view>
-  <view style="background-color:white;padding:0px 10px 0px 10px;flex-direction:row;display:flex;">
+  <view class="recommend-view-item-top">
     <image bindtap="clickRecommend" id="0" wx:if="{{recommendList[0].image}}" style="width:50%;height:120px;margin-right:5px;" src="{{imageUrl + recommendList[0].image}}" mode="aspectFill"></image>
     <image bindtap="clickRecommend" id="1" wx:if="{{recommendList[1].image}}" style="width:50%;height:120px;margin-left:5px;" src="{{imageUrl + recommendList[1].image}}" mode="aspectFill"></image>
   </view>
-  <view style="background-color:white;padding:10px 10px 10px 10px;flex-direction:row;display:flex;">
+  <view class="recommend-view-item-bottom">
     <image bindtap="clickRecommend" id="2" wx:if="{{recommendList[2].image}}" style="width:50%;height:120px;margin-right:5px;" src="{{imageUrl + recommendList[2].image}}" mode="aspectFill"></image>
     <image bindtap="clickRecommend" id="3" wx:if="{{recommendList[3].image}}" style="width:50%;height:120px;margin-left:5px;" src="{{imageUrl + recommendList[3].image}}" mode="aspectFill"></image>
   </view>
 
 
   <!--底部图片  -->
-  <image style="width:100%;margin-top:5px;" src="../images/mainpage_bottom.jpg" mode="widthFix" />
+  <image class="bottom-img" src="../images/mainpage_bottom.jpg" mode="widthFix" />
 </view>

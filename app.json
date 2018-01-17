@@ -3,7 +3,8 @@
     "pages/mainpage/mainpage",
     "pages/houselist/houselist",
     "pages/housedetail/housedetail",
-    "pages/community/community"
+    "pages/community/community",
+    "pages/me/me"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -33,6 +34,12 @@
         "iconPath": "pages/images/bottom_tab_3_nomal.png",
         "selectedIconPath": "pages/images/bottom_tab_3_press.png",
         "text": "社区"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "pages/images/bottom_tab_4_nomal.png",
+        "selectedIconPath": "pages/images/bottom_tab_4_press.png",
+        "text": "我的"
       }
     ]
   }

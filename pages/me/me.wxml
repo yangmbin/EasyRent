@@ -1,0 +1,8 @@
+<!--pages/me/me.wxml-->
+<view>
+  <!-- <image src="../images/avatar_bg.png" mode="widthFix"/> -->
+  <view class="flex-column-center" style="background:url('../images/avatar_bg.png');padding:45rpx 0 45rpx 0;background-size:cover;">
+    <image src="../images/community_bg.jpg" style="width:100rpx;height:100rpx;" />
+    <text style="margin-top:10rpx;">haha</text>
+  </view>
+</view>
