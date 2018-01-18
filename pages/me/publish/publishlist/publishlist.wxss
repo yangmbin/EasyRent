@@ -1,0 +1,4 @@
+/* pages/me/publish/publishlist/publishlist.wxss */
+.publish-text {
+  color:#131313;font-size: 26rpx;padding-top: 26rpx;padding-bottom: 26rpx;padding-left: 20rpx;background-color: white;
+}

@@ -1,4 +1,4 @@
-// pages/me/me.js
+// pages/me/publish/publishlist/publishlist.js
 Page({
 
   /**
@@ -62,14 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  /**
-   * 跳转到我的发布
-   */
-  goPublishList: function(e) {
-    wx.navigateTo({
-      url: 'publish/publishlist/publishlist',
-    })
   }
 })

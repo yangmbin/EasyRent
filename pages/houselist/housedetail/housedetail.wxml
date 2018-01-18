@@ -21,7 +21,7 @@
         <text class="detail-text">公寓类型：{{detail.renttype}}\n</text>
         <view class="flex-row-center-vertical">
           <text class="detail-text" bindtap="openMap">地址：{{detail.city}} {{detail.region}} {{detail.address}}</text>
-          <image class="location-icon" src="../images/icon_location.png" mode="aspectFill"></image>
+          <image class="location-icon" src="../../../images/icon_location.png" mode="aspectFill"></image>
         </view>
       </view>
 
@@ -31,23 +31,23 @@
       </view>
       <view class="flex-row margin-tb-10" wx:for="{{installation_item_list}}" wx:for-item="item">
         <view wx:if="{{item.item0}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">{{item.item0}}</text>
         </view>
         <view wx:if="{{item.item1}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">{{item.item1}}</text>
         </view>
         <view wx:if="{{item.item2}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">{{item.item2}}</text>
         </view>
         <view wx:if="{{item.item3}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">{{item.item3}}</text>
         </view>
         <view wx:if="{{item.item4}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">{{item.item4}}</text>
         </view>
       </view>
@@ -59,19 +59,19 @@
       </view>
       <view class="flex-row margin-tb-10">
         <view wx:if="{{detail.pay_month == 1}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">月付</text>
         </view>
         <view wx:if="{{detail.pay_season == 1}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">季付</text>
         </view>
         <view wx:if="{{detail.pay_half == 1}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">半年付</text>
         </view>
         <view wx:if="{{detail.pay_year == 1}}" class="flex-column-center" style="width:20%;">
-          <image class="wd-30px" src="../images/icon_right.png"></image>
+          <image class="wd-30px" src="../../../images/icon_right.png"></image>
           <text class="right-icon-text">年付</text>
         </view>
       </view>
@@ -87,7 +87,7 @@
 
   <!--底部固定布局  -->
   <view class="bottom-dial">
-    <image class="bottom-dial-image" src="../images/bottom_contact.jpg" mode="aspectFit"></image>
+    <image class="bottom-dial-image" src="../../../images/bottom_contact.jpg" mode="aspectFit"></image>
     <view class="bottom-dial-btn" bindtap="dial">
       <text style="color:black;font-size:20px;">立即预约</text>
     </view>

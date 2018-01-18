@@ -77,7 +77,7 @@ Page({
     var index = e.currentTarget.id;
     var detail = JSON.stringify(this.data.bannerList[index]);
     wx.navigateTo({
-      url: '../housedetail/housedetail?detail=' + detail
+      url: '../houselist/housedetail/housedetail?detail=' + detail
     })
   },
 
@@ -90,7 +90,7 @@ Page({
     var index = e.currentTarget.id;
     var detail = JSON.stringify(this.data.recommendList[index]);
     wx.navigateTo({
-      url: '../housedetail/housedetail?detail=' + detail
+      url: '../houselist/housedetail/housedetail?detail=' + detail
     })
   },
 

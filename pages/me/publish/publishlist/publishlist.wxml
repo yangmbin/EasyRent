@@ -1,0 +1,17 @@
+<!--pages/me/publish/publishlist/publishlist.wxml-->
+<view>
+  <!--发布信息按钮  -->
+  <view class="publish-text">发布信息</view>
+
+  <!--发布列表  -->
+  <view>
+    <view class="flex-row">
+      <view style="flex-grow:1;">
+        <image src="../../../../images/community_bg.jpg" style="width:50rpx;height:50rpx;" />
+      </view>
+      <view style="flex-grow:1;">
+        <text>hahahah</text>
+      </view>
+    </view>
+  </view>
+</view>

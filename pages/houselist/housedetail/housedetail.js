@@ -1,5 +1,5 @@
 // pages/housedetail/housedetail.js
-var networkUtil = require('../../utils/networkUtil.js');
+var networkUtil = require('../../../utils/networkUtil.js');
 Page({
 
   /**

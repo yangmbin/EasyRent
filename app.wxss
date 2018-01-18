@@ -279,3 +279,6 @@ form {
 .flex-column-center {
   flex-direction:column;display:flex;justify-content:center;align-items:center;
 }
+.divider {
+  background-color:#f8f8f8;height:1rpx;
+}

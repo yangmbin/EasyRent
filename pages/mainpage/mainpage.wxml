@@ -18,7 +18,7 @@
     <view class="recommend-view-title">精选公寓</view>
     <view class="recommend-view-more" bindtap="viewMore">
       <text class="recommend-view-more-text">查看更多</text>
-      <image style="width:16px;height:16px;" src="../images/arrow_right.png"></image>
+      <image style="width:16px;height:16px;" src="../../images/arrow_right.png"></image>
     </view>
   </view>
   <view class="recommend-view-item-top">
@@ -32,5 +32,5 @@
 
 
   <!--底部图片  -->
-  <image class="bottom-img" src="../images/mainpage_bottom.jpg" mode="widthFix" />
+  <image class="bottom-img" src="../../images/mainpage_bottom.jpg" mode="widthFix" />
 </view>

@@ -1,4 +1,4 @@
 <!--pages/community/community.wxml-->
 <scroll-view class="wd-match">
-  <image class="wd-match" src="../images/community_bg.jpg" mode="aspectFill" />
+  <image class="wd-match" src="../../images/community_bg.jpg" mode="aspectFill" />
 </scroll-view>

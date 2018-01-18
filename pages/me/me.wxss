@@ -1,1 +1,20 @@
 /* pages/me/me.wxss */
+page {
+  background-color: #ffffff;
+}
+
+.avatar-view {
+  background:url('http://oos.guipiaoke.com/image/guipiao_mini/avatar_bg.png');padding:50rpx 0 50rpx 0;background-size:cover;
+}
+.avatar-view-image {
+  width:100rpx;height:100rpx;border-radius:50%;
+}
+.text {
+  margin-top:10rpx;color:#131313;font-size:24rpx;
+}
+.vertical-btn-group-text {
+  width:50%;color:#131313;font-size:26rpx;
+}
+.vertical-btn-group-image {
+  width:50%;flex-direction:row;display:flex;align-items:center;justify-content:flex-end;
+}

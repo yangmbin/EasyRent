@@ -1,8 +1,75 @@
 <!--pages/me/me.wxml-->
 <view>
-  <!-- <image src="../images/avatar_bg.png" mode="widthFix"/> -->
-  <view class="flex-column-center" style="background:url('../images/avatar_bg.png');padding:45rpx 0 45rpx 0;background-size:cover;">
-    <image src="../images/community_bg.jpg" style="width:100rpx;height:100rpx;" />
-    <text style="margin-top:10rpx;">haha</text>
+  <!-- <image src="../../images/avatar_bg.png" mode="widthFix"/> -->
+  <!--头像  -->
+  <view class="flex-column-center avatar-view">
+    <image src="../../images/community_bg.jpg" class="avatar-view-image" />
+    <text class="text">微信名称</text>
   </view>
+
+  <!--横向按钮  -->
+  <view class="flex-row-center-vertical" style="padding-top:50rpx;padding-bottom:50rpx;">
+    <view class="flex-column-center" style="width:25%;">
+      <image src="../../images/icon_rent_pay.png" style="width:60rpx;height:60rpx;"/>
+      <text class="text">房租缴费</text>
+    </view>
+    <view class="flex-column-center" style="width:25%;">
+      <image src="../../images/icon_water_and_electricity_pay.png" style="width:60rpx;height:60rpx;"/>
+      <text class="text">水电缴费</text>
+    </view>
+    <view class="flex-column-center" style="width:25%;">
+      <image src="../../images/icon_my_bill.png" style="width:60rpx;height:60rpx;"/>
+      <text class="text">我的账单</text>
+    </view>
+    <view class="flex-column-center" style="width:25%;">
+      <image src="../../images/icon_my_account.png" style="width:60rpx;height:60rpx;"/>
+      <text class="text">我的账户</text>
+    </view>
+  </view>
+
+  <view style="background-color:#f8f8f8;height:26rpx;"/>
+
+  <!--纵向按钮  -->
+  <view>
+    <view class="flex-row-center-vertical" style="padding: 16rpx;" bindtap="goPublishList">
+      <text class="vertical-btn-group-text">我的发布</text>
+      <view class="vertical-btn-group-image">
+        <image src="../../images/icon_right_1.png" style="width:32rpx;height:32rpx;" />
+      </view>
+    </view>
+    <view class="divider"/>
+
+    <view class="flex-row-center-vertical" style="padding: 16rpx;">
+      <text class="vertical-btn-group-text">我的留言</text>
+      <view class="vertical-btn-group-image">
+        <image src="../../images/icon_right_1.png" style="width:32rpx;height:32rpx;" />
+      </view>
+    </view>
+    <view class="divider"/>
+
+    <view class="flex-row-center-vertical" style="padding: 16rpx;">
+      <text class="vertical-btn-group-text">我的收藏</text>
+      <view class="vertical-btn-group-image">
+        <image src="../../images/icon_right_1.png" style="width:32rpx;height:32rpx;" />
+      </view>
+    </view>
+    <view class="divider"/>
+
+    <view class="flex-row-center-vertical" style="padding: 16rpx;">
+      <text class="vertical-btn-group-text">我的合同</text>
+      <view class="vertical-btn-group-image">
+        <image src="../../images/icon_right_1.png" style="width:32rpx;height:32rpx;" />
+      </view>
+    </view>
+    <view class="divider"/>
+
+    <view class="flex-row-center-vertical" style="padding: 16rpx;">
+      <text class="vertical-btn-group-text">在线客服</text>
+      <view class="vertical-btn-group-image">
+        <image src="../../images/icon_right_1.png" style="width:32rpx;height:32rpx;" />
+      </view>
+    </view>
+    <view class="divider"/>
+  </view>
+
 </view>

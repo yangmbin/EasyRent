@@ -80,7 +80,7 @@ Page({
     var index = e.currentTarget.id;
     var detail = JSON.stringify(this.data.list[index]);
     wx.navigateTo({
-      url: '../housedetail/housedetail?detail=' + detail
+      url: 'housedetail/housedetail?detail=' + detail
     })
   },
 
