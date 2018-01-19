@@ -1,0 +1,78 @@
+/* pages/me/publish/publishShareInfo/publishShareInfo.wxss */
+
+page {
+  background-color: white;
+}
+
+.upload-pic-btn {
+  width: 124rpx;
+  height: 124rpx;
+  background: rgba(241, 116, 3, 1);
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+.upload-pic-text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+}
+
+.upload-pic-bg {
+  padding-top: 60rpx;
+  padding-bottom: 60rpx;
+}
+
+.title-text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(0, 0, 0, 1);
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 15rpx;
+}
+
+.text-black-1 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(0, 0, 0, 1);
+}
+
+.text-gray {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(133, 133, 133, 1);
+}
+
+.margin-tb-10 {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.checkbox {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.unselect {
+  width: 35rpx;
+  height: 23rpx;
+  border: 1rpx solid #F17403;
+  margin-left: 14rpx;
+}
+
+.select {
+  width: 35rpx;
+  height: 23rpx;
+  border: 1rpx solid #F17403;
+  margin-left: 14rpx;
+  background-color: #F17403;
+}
+
+.padding-tb-20 {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}

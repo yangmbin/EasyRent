@@ -1,0 +1,139 @@
+<!--pages/me/publish/publishShareInfo/publishShareInfo.wxml-->
+<view>
+  <!--公寓图片  -->
+  <view class="upload-pic-bg flex-column-center" style="background:url('{{housePic}}');background-size: cover;">
+    <view class="upload-pic-btn flex-column-center" bindtap="chooseHousePic">
+      <text class="upload-pic-text">上传照片</text>
+    </view>
+  </view>
+
+  <!--基本信息  -->
+  <view class="divider"></view>
+  <view class="title-text">基本信息</view>
+  <view class="divider"></view>
+
+  <!--小区位置  -->
+  <view class="flex-column-center margin-tb-10">
+    <view class="text-black-1">小区位置</view>
+    <picker mode="multiSelector" bindchange="bindRegionIndexChange" value="{{regionIndex}}" range="{{regionArray}}">
+      <view class="text-gray">
+        {{regionArray[0][regionIndex[0]]}} {{regionArray[1][regionIndex[1]]}}
+      </view>
+    </picker>
+    <input class="text-gray" style="text-align:center;" placeholder="填写具体位置" auto-focus/>
+  </view>
+
+  <!--户型  -->
+  <view class="divider"></view>
+  <view class="flex-column-center margin-tb-10">
+    <view class="text-black-1">户型</view>
+    <picker mode="selector" bindchange="bindHouseTypeIndexChange" value="{{houseTypeIndex}}" range="{{houseTypeArray}}">
+      <view class="text-gray">
+        {{houseTypeArray[houseTypeIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <!--租金  -->
+  <view class="divider"></view>
+  <view class="flex-column-center margin-tb-10">
+    <view class="text-black-1">小区位置</view>
+    <input class="text-gray" style="text-align:center;" placeholder="请输入租金" auto-focus/>
+  </view>
+
+  <!--付款方式  -->
+  <view class="divider"></view>
+  <view class="title-text">付款方式</view>
+  <view class="divider"></view>
+
+  <view class="flex-row padding-tb-20">
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">月付</text>
+        <view class="unselect"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">季付</text>
+        <view class="unselect"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">年付</text>
+        <view class="select"></view>
+      </view>
+    </view>
+  </view>
+
+  <!--设施  -->
+  <view class="divider"></view>
+  <view class="title-text">设施</view>
+  <view class="divider"></view>
+
+  <view class="flex-row padding-tb-20">
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">沙发</text>
+        <view class="unselect"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">床</text>
+        <view class="unselect"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">茶几</text>
+        <view class="select"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">衣柜</text>
+        <view class="select"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="flex-row padding-tb-20">
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">洗衣机</text>
+        <view class="unselect"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">冰箱</text>
+        <view class="unselect"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">宽带</text>
+        <view class="select"></view>
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="text-black-1">电视</text>
+        <view class="select"></view>
+      </view>
+    </view>
+  </view>
+
+  <!--房屋到期时间  -->
+  <view class="divider"></view>
+  <view class="title-text">房屋到期时间</view>
+  <view class="divider"></view>
+
+  <picker mode="date" value="{{deadline}}" start="2018-01-01" end="2099-01-01" bindchange="bindDateChange">
+    <view class="text-gray flex-column-center padding-tb-20">
+      {{deadline}}
+    </view>
+  </picker>
+</view>

@@ -1,7 +1,7 @@
 <!--pages/me/publish/publishlist/publishlist.wxml-->
 <view>
   <!--发布信息按钮  -->
-  <view class="publish-text">发布信息</view>
+  <view class="publish-text" bindtap="goPublish">发布信息</view>
 
   <!--发布列表  -->
   <view>

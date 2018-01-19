@@ -5,7 +5,8 @@
     "pages/houselist/housedetail/housedetail",
     "pages/community/community",
     "pages/me/me",
-    "pages/me/publish/publishlist/publishlist"
+    "pages/me/publish/publishlist/publishlist",
+    "pages/me/publish/publishShareInfo/publishShareInfo"
   ],
   "window": {
     "backgroundTextStyle": "dark",

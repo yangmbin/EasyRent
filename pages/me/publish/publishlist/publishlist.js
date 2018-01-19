@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
   
+  }, 
+  /**
+   * 跳转到发布页面（发布分享房源信息）
+   */
+  goPublish: function(e) {
+    wx.navigateTo({
+      url: '../publishShareInfo/publishShareInfo',
+    })
   }
 })
