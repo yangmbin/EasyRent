@@ -20,7 +20,7 @@
         {{regionArray[0][regionIndex[0]]}} {{regionArray[1][regionIndex[1]]}}
       </view>
     </picker>
-    <input class="text-gray" style="text-align:center;" placeholder="填写具体位置" auto-focus/>
+    <input class="text-gray" style="text-align:center;" placeholder="填写具体位置" />
   </view>
 
   <!--户型  -->
@@ -37,8 +37,8 @@
   <!--租金  -->
   <view class="divider"></view>
   <view class="flex-column-center margin-tb-10">
-    <view class="text-black-1">小区位置</view>
-    <input class="text-gray" style="text-align:center;" placeholder="请输入租金" auto-focus/>
+    <view class="text-black-1">租金</view>
+    <input class="text-gray" style="text-align:center;" placeholder="请输入租金" />
   </view>
 
   <!--付款方式  -->
@@ -136,4 +136,60 @@
       {{deadline}}
     </view>
   </picker>
+
+  <!--联系人  -->
+  <view class="divider"></view>
+  <view class="title-text">联系人</view>
+  <view class="divider"></view>
+
+  <view class="flex-row padding-tb-20">
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <input class="text-gray" style="text-align:center;" placeholder="请输入姓名" />
+      </view>
+    </view>
+    <view class="checkbox">
+      <view class="flex-row-center-vertical">
+        <text class="gender-select text-black-1">先生</text>
+        <text class="gender-unselect text-black-1">女士</text>
+      </view>
+    </view>
+  </view>
+
+  <!--手机号  -->
+  <view class="divider"></view>
+  <view class="flex-column-center margin-tb-10">
+    <view class="text-black-1">手机号</view>
+    <input class="text-gray" style="text-align:center;" placeholder="请输入手机号" />
+  </view>
+
+  <!--真实信息  -->
+  <view class="divider"></view>
+  <view class="title-text">真实信息</view>
+  <view class="divider"></view>
+
+  <view class="flex-row padding-tb-40" style="margin-bottom: 74rpx;">
+    <view class="flex-column-center realinfo-view">
+      <text class="realinfo-text text-black-1">租赁合同</text>
+      <view class="flex-column-center upload-pic-bg-1" style="background: url('http://oos.guipiaoke.com/image/guipiao_mini/avatar_bg.png');background-size: cover;">
+        <view class="upload-pic-btn-1 flex-column-center">
+          <text class="upload-pic-text-1">上传\n照片</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="flex-column-center realinfo-view">
+      <text class="realinfo-text text-black-1">房产证</text>
+      <view class="flex-column-center upload-pic-bg-1" style="background: url('http://oos.guipiaoke.com/image/guipiao_mini/avatar_bg.png');background-size: cover;">
+        <view class="upload-pic-btn-1 flex-column-center">
+          <text class="upload-pic-text-1">上传\n照片</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--提交按钮  -->
+  <view class="bottom-btn flex-column-center">
+    <text>提交</text>
+  </view>
 </view>

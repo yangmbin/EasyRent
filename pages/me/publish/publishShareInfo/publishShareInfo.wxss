@@ -12,8 +12,21 @@ page {
   border-radius: 50%;
 }
 
+.upload-pic-btn-1 {
+  width: 71rpx;
+  height: 71rpx;
+  background: rgba(241, 116, 3, 1);
+  border-radius: 50%;
+}
+
 .upload-pic-text {
   font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+}
+
+.upload-pic-text-1 {
+  font-size: 20rpx;
   font-family: PingFangSC-Regular;
   color: rgba(255, 255, 255, 1);
 }
@@ -21,6 +34,11 @@ page {
 .upload-pic-bg {
   padding-top: 60rpx;
   padding-bottom: 60rpx;
+}
+
+.upload-pic-bg-1 {
+  width: 100%;
+  height: 180rpx;
 }
 
 .title-text {
@@ -60,19 +78,57 @@ page {
 .unselect {
   width: 35rpx;
   height: 23rpx;
-  border: 1rpx solid #F17403;
+  border: 1rpx solid #f17403;
   margin-left: 14rpx;
 }
 
 .select {
   width: 35rpx;
   height: 23rpx;
-  border: 1rpx solid #F17403;
+  border: 1rpx solid #f17403;
   margin-left: 14rpx;
-  background-color: #F17403;
+  background-color: #f17403;
 }
 
 .padding-tb-20 {
   padding-top: 20rpx;
   padding-bottom: 20rpx;
+}
+
+.padding-tb-40 {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.gender-select {
+  border: 1rpx solid #f17403;
+  background-color: #f17403;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.gender-unselect {
+  border: 1rpx solid #f17403;
+  margin-left: 20rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.realinfo-text {
+  border: 1rpx solid #f17403;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.realinfo-view {
+  flex-grow: 1;
+  margin: 20rpx 20px 20rpx 20rpx;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 74rpx;
+  background: rgba(255, 227, 182, 1);
 }
