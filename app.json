@@ -6,7 +6,8 @@
     "pages/community/community",
     "pages/me/me",
     "pages/me/publish/publishlist/publishlist",
-    "pages/me/publish/publishShareInfo/publishShareInfo"
+    "pages/me/publish/publishShareInfo/publishShareInfo",
+    "pages/community/shareInfoDetail/shareInfoDetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",

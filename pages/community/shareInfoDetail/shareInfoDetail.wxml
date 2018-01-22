@@ -1,0 +1,59 @@
+<!--pages/community/shareInfoDetail/shareInfoDetail.wxml-->
+<view>
+  <view style="margin-bottom: 100rpx;">
+    <image src="../../../images/community_bg.jpg" class="img-wd" mode="aspectFill" />
+
+    <!--房屋详情  -->
+    <view class="text-1 padding-lr-30 padding-tb-20">房屋详情</view>
+    <view class="divider"></view>
+
+    <view class="padding-30">
+      <view class="text-2">中天会展城A区A3组团5栋</view>
+      <view class="text-2">2室一厅</view>
+    </view>
+    <view class="divider"></view>
+
+    <!--房屋设施  -->
+    <view class="text-1 padding-lr-30 padding-tb-20">房屋设施</view>
+    <view class="divider"></view>
+
+    <view wx:for="{{installation}}" wx:for-index="index1">
+      <view class="flex-row">
+        <view wx:for="{{installation[index1]}}" wx:for-index="index2" class="flex-column-center text-2 padding-tb-30" style="width: 20%;" wx:if="{{installation[index1][index2]}}">{{installation[index1][index2]}}</view>
+      </view>
+    </view>
+
+    <!--付款方式  -->
+    <view class="divider"></view>
+    <view class="text-1 padding-lr-30 padding-tb-20">付款方式</view>
+    <view class="divider"></view>
+
+    <view class="flex-row">
+      <view wx:for="{{pay_type}}" wx:for-index="index" class="flex-column-center text-2 padding-tb-30" style="width: 33%;" wx:if="pay_type[index]">{{pay_type[index]}}</view>
+    </view>
+
+    <!--留言区  -->
+    <view class="divider"></view>
+    <view class="text-1 padding-lr-30 padding-tb-20">留言区</view>
+    <view class="divider"></view>
+  </view>
+
+
+
+  <!--底部悬浮布局按钮  -->
+  <view class="flex-row bottom-view">
+    <view class="flex-row bottom-view-left">
+      <view style="flex-grow: 1;" class="flex-row-center">
+        <image src="../../../images/icon_edit.png" class="icon-wd"></image>
+        <text class="text-4 padding-lr-10">留言</text>
+      </view>
+      <view style="flex-grow: 1;" class="flex-row-center">
+        <image src="../../../images/icon_like.png" class="icon-wd"></image>
+        <text class="text-4 padding-lr-10">收藏</text>
+      </view>
+    </view>
+    <view class="flex-column-center text-3 bottom-view-right">
+      立即预约
+    </view>
+  </view>
+</view>

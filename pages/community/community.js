@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    test: [1, 2]
   },
 
   /**
@@ -62,5 +62,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**
+   * 跳转到详情页面
+   */
+  goDetail: function(e) {
+    wx.navigateTo({
+      url: 'shareInfoDetail/shareInfoDetail',
+    })
   }
 })

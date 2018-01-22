@@ -1,0 +1,57 @@
+/* pages/community/shareInfoDetail/shareInfoDetail.wxss */
+
+page {
+  background-color: white;
+}
+
+.img-wd {
+  width: 100%;
+  height: 360rpx;
+}
+
+.text-1 {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+}
+
+.text-2 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(132, 132, 132, 1);
+}
+
+.text-3 {
+  font-size: 47rpx;
+  font-family: PingFangSC-Light;
+  color: rgba(0, 0, 0, 1);
+}
+
+.text-4 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(0, 0, 0, 1);
+}
+
+.bottom-view {
+  height: 94rpx;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.bottom-view-left {
+  flex-grow: 1;
+  background: rgba(229, 229, 229, 1);
+}
+
+.bottom-view-right {
+  flex-grow: 1;
+  background: rgba(255, 227, 182, 1);
+}
+
+.icon-wd {
+  width: 35rpx;
+  height: 35rpx;
+}

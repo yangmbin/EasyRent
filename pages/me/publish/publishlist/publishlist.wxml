@@ -1,17 +1,30 @@
 <!--pages/me/publish/publishlist/publishlist.wxml-->
 <view>
   <!--发布信息按钮  -->
+  <view class="divider"></view>
   <view class="publish-text" bindtap="goPublish">发布信息 ></view>
+  <view class="divider"></view>
 
   <!--发布列表  -->
-  <view>
-    <view class="flex-row">
-      <view style="flex-grow:1;">
-        <image src="../../../../images/community_bg.jpg" style="width:50rpx;height:50rpx;" />
+  <view wx:for="{{test}}" bindtap="goDetail">
+    <view class="flex-row padding-tb-30">
+      <view class="flex-column-center" style="flex-grow:3;">
+        <image src="../../../../images/community_bg.jpg" class="img-wd" mode="aspectFill" />
       </view>
-      <view style="flex-grow:1;">
-        <text>hahahah</text>
+      <view style="flex-grow:7;">
+        <text class="address-text">中天会展城A区A3组团5栋</text>
+        <view>
+          <text class="price-tag">¥</text>
+          <text class="price">500</text>
+        </view>
       </view>
     </view>
+    <view class="divider"></view>
+    <view class="flex-row padding-tb-20" style="justify-content: flex-end;">
+      <view class="padding-lr-20 btn">分享</view>
+      <view class="padding-lr-20 btn">编辑</view>
+      <view class="padding-lr-20 btn">删除</view>
+    </view>
+    <view class="divider"></view>
   </view>
 </view>

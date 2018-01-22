@@ -1,11 +1,12 @@
-// pages/me/publish/publishlist/publishlist.js
+// pages/community/shareInfoDetail/shareInfoDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    test: [1, 2]
+    installation: [['沙发', '床', '茶几', '衣柜', '洗衣机'], ['冰箱', '宽带', '电视']],
+    pay_type: ['月付', '季付', '年付']
   },
 
   /**
@@ -62,22 +63,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }, 
-  /**
-   * 跳转到发布页面（发布分享房源信息）
-   */
-  goPublish: function(e) {
-    wx.navigateTo({
-      url: '../publishShareInfo/publishShareInfo',
-    })
-  },
-
-  /**
-   * 跳转到详情
-   */
-  goDetail: function(e) {
-    wx.navigateTo({
-      url: '../../../community/shareInfoDetail/shareInfoDetail',
-    })
   }
 })

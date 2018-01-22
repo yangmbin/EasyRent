@@ -268,6 +268,13 @@ form {
   height: 100%;
 }
 
+.flex-row-center {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
 .flex-row-center-vertical {
   flex-direction: row;
   display: flex;
@@ -281,4 +288,46 @@ form {
 }
 .divider {
   background-color:#f8f8f8;height:1rpx;
+}
+
+.padding-tb-10 {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.padding-tb-20 {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.padding-tb-30 {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.padding-lr-10 {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.padding-lr-20 {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.padding-lr-30 {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.padding-10 {
+  padding: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.padding-20 {
+  padding: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.padding-30 {
+  padding: 30rpx 30rpx 30rpx 30rpx;
 }
