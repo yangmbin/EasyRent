@@ -6,7 +6,9 @@ Page({
    */
   data: {
     installation: [['沙发', '床', '茶几', '衣柜', '洗衣机'], ['冰箱', '宽带', '电视']],
-    pay_type: ['月付', '季付', '年付']
+    pay_type: ['月付', '季付', '年付'],
+
+    hideModal: true
   },
 
   /**
@@ -63,5 +65,32 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**
+   * 提交评论
+   */
+  confirm: function() {
+    this.setData({
+      hideModal: true
+    });
+  },
+
+  /**
+   * 取消评论
+   */
+  cancel: function() {
+    this.setData({
+      hideModal: true
+    });
+  },
+
+  /**
+   * 点击评论按钮
+   */
+  goComment: function() {
+    this.setData({
+      hideModal: false
+    });
   }
 })

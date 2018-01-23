@@ -103,6 +103,7 @@ page {
 .gender-select {
   border: 1rpx solid #f17403;
   background-color: #f17403;
+  margin-left: 20rpx;
   padding-left: 10rpx;
   padding-right: 10rpx;
 }

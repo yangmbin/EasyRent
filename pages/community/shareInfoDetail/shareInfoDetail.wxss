@@ -34,6 +34,12 @@ page {
   color: rgba(0, 0, 0, 1);
 }
 
+.text-5 {
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(125, 125, 125, 1);
+}
+
 .bottom-view {
   height: 94rpx;
   position: fixed;
@@ -54,4 +60,15 @@ page {
 .icon-wd {
   width: 35rpx;
   height: 35rpx;
+}
+
+.avatar-view-image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  margin-right: 14rpx;
+}
+
+.margin-lrt-30 {
+  margin: 30rpx 30rpx 0 30rpx;
 }

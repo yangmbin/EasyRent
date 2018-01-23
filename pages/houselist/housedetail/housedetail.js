@@ -94,17 +94,34 @@ Page({
    * 拨打电话
    */
   dial: function () {
+    var that = this;
     if (!this.data.phone)
       return;
-    wx.makePhoneCall({
-      phoneNumber: this.data.phone,
-      success: function () {
-        console.log("拨打电话成功！")
-      },
-      fail: function () {
-        console.log("拨打电话失败！")
+
+    wx.showModal({
+      title: '联系电话',
+      content: this.data.phone,
+      confirmText: '拨号',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+
+          wx.makePhoneCall({
+            phoneNumber: that.data.phone,
+            success: function () {
+              console.log("拨打电话成功！")
+            },
+            fail: function () {
+              console.log("拨打电话失败！")
+            }
+          })
+
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
+    
   },
 
   /**

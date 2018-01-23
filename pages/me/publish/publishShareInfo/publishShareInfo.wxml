@@ -38,7 +38,7 @@
   <view class="divider"></view>
   <view class="flex-column-center margin-tb-10">
     <view class="text-black-1">租金</view>
-    <input class="text-gray" style="text-align:center;" placeholder="请输入租金" />
+    <input type="number" class="text-gray" style="text-align:center;" placeholder="请输入租金" />
   </view>
 
   <!--付款方式  -->
@@ -47,22 +47,22 @@
   <view class="divider"></view>
 
   <view class="flex-row padding-tb-20">
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickPayType" data-id="0">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">月付</text>
-        <view class="unselect"></view>
+        <view class="{{pay_type[0] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickPayType" data-id="1">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">季付</text>
-        <view class="unselect"></view>
+        <view class="{{pay_type[1] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickPayType" data-id="2">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">年付</text>
-        <view class="select"></view>
+        <view class="{{pay_type[2] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
   </view>
@@ -73,55 +73,55 @@
   <view class="divider"></view>
 
   <view class="flex-row padding-tb-20">
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="0">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">沙发</text>
-        <view class="unselect"></view>
+        <view class="{{installation[0] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="1">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">床</text>
-        <view class="unselect"></view>
+        <view class="{{installation[1] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="2">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">茶几</text>
-        <view class="select"></view>
+        <view class="{{installation[2] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="3">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">衣柜</text>
-        <view class="select"></view>
+        <view class="{{installation[3] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
   </view>
 
   <view class="flex-row padding-tb-20">
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="4">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">洗衣机</text>
-        <view class="unselect"></view>
+        <view class="{{installation[4] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="5">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">冰箱</text>
-        <view class="unselect"></view>
+        <view class="{{installation[5] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="6">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">宽带</text>
-        <view class="select"></view>
+        <view class="{{installation[6] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
-    <view class="checkbox">
+    <view class="checkbox" bindtap="clickInstallation" data-id="7">
       <view class="flex-row-center-vertical">
         <text class="text-black-1">电视</text>
-        <view class="select"></view>
+        <view class="{{installation[7] == 0 ? 'unselect' : 'select'}}"></view>
       </view>
     </view>
   </view>
@@ -150,8 +150,8 @@
     </view>
     <view class="checkbox">
       <view class="flex-row-center-vertical">
-        <text class="gender-select text-black-1">先生</text>
-        <text class="gender-unselect text-black-1">女士</text>
+        <text class="text-black-1 {{gender == 0 ? 'gender-unselect' : 'gender-select'}}" bindtap="clickGender" data-id="1">先生</text>
+        <text class="text-black-1 {{gender == 1 ? 'gender-unselect' : 'gender-select'}}" bindtap="clickGender" data-id="0">女士</text>
       </view>
     </view>
   </view>
@@ -160,7 +160,7 @@
   <view class="divider"></view>
   <view class="flex-column-center margin-tb-10">
     <view class="text-black-1">手机号</view>
-    <input class="text-gray" style="text-align:center;" placeholder="请输入手机号" />
+    <input type="number" class="text-gray" style="text-align:center;" placeholder="请输入手机号" />
   </view>
 
   <!--真实信息  -->
@@ -171,8 +171,8 @@
   <view class="flex-row padding-tb-40" style="margin-bottom: 74rpx;">
     <view class="flex-column-center realinfo-view">
       <text class="realinfo-text text-black-1">租赁合同</text>
-      <view class="flex-column-center upload-pic-bg-1" style="background: url('http://oos.guipiaoke.com/image/guipiao_mini/avatar_bg.png');background-size: cover;">
-        <view class="upload-pic-btn-1 flex-column-center">
+      <view class="flex-column-center upload-pic-bg-1" style="background: url({{agreementPic}});background-size: cover;">
+        <view class="upload-pic-btn-1 flex-column-center" bindtap="chooseAgreementPic">
           <text class="upload-pic-text-1">上传\n照片</text>
         </view>
       </view>
@@ -180,8 +180,8 @@
 
     <view class="flex-column-center realinfo-view">
       <text class="realinfo-text text-black-1">房产证</text>
-      <view class="flex-column-center upload-pic-bg-1" style="background: url('http://oos.guipiaoke.com/image/guipiao_mini/avatar_bg.png');background-size: cover;">
-        <view class="upload-pic-btn-1 flex-column-center">
+      <view class="flex-column-center upload-pic-bg-1" style="background: url({{ownershipPic}});background-size: cover;">
+        <view class="upload-pic-btn-1 flex-column-center" bindtap="chooseOwnershipPic">
           <text class="upload-pic-text-1">上传\n照片</text>
         </view>
       </view>

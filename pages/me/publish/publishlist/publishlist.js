@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadMoreText: false, // 用来显示列表下方的加载更多的提示语
     test: [1, 2]
   },
 

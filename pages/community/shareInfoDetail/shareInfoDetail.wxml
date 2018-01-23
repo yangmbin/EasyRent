@@ -36,6 +36,41 @@
     <view class="divider"></view>
     <view class="text-1 padding-lr-30 padding-tb-20">留言区</view>
     <view class="divider"></view>
+
+    <!--主评论  -->
+    <view>
+      <view style="padding-bottom: 30rpx;">
+        <view class="flex-row margin-lrt-30">
+          <image src="../../../images/community_bg.jpg" class="avatar-view-image" />
+          <view class="flex-column-center">
+            <text class="text-2">微信名称</text>
+            <text class="text-5">2016.01.02</text>
+          </view>
+        </view>
+        <view class="text-4 padding-lr-30" style="margin-left: 86rpx;">请问一下这个房子周边交通如何？</view>
+      </view>
+      <view class="divider"></view>
+    </view>
+    <!--回复  -->
+    <view style="margin-left: 86rpx;">
+      <view style="padding-bottom: 30rpx;">
+        <view class="flex-row margin-lrt-30">
+          <image src="../../../images/community_bg.jpg" class="avatar-view-image" />
+          <view class="flex-column-center">
+            <text class="text-2">微信名称</text>
+            <text class="text-5">2016.01.02</text>
+          </view>
+        </view>
+        <view class="text-4 padding-lr-30" style="margin-left: 86rpx;">请问一下这个房子周边交通如何？</view>
+      </view>
+      <view class="divider"></view>
+    </view>
+
+    <!--评论modal  -->
+    <modal hidden="{{hideModal}}" title="评论" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <input type='text' placeholder="请输入内容" auto-focus/>
+    </modal>
+
   </view>
 
 
@@ -43,7 +78,7 @@
   <!--底部悬浮布局按钮  -->
   <view class="flex-row bottom-view">
     <view class="flex-row bottom-view-left">
-      <view style="flex-grow: 1;" class="flex-row-center">
+      <view style="flex-grow: 1;" class="flex-row-center" bindtap="goComment">
         <image src="../../../images/icon_edit.png" class="icon-wd"></image>
         <text class="text-4 padding-lr-10">留言</text>
       </view>
