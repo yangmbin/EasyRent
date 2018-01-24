@@ -6,16 +6,16 @@
   <view class="divider"></view>
 
   <!--发布列表  -->
-  <view wx:for="{{test}}" bindtap="goDetail">
+  <view wx:for="{{list}}" wx:key="{{id}}" wx:for-item="item" bindtap="goDetail">
     <view class="flex-row padding-tb-30">
       <view class="flex-column-center" style="flex-grow:3;">
-        <image src="../../../../images/community_bg.jpg" class="img-wd" mode="aspectFill" />
+        <image src="{{imageUrl + item.house_img}}" class="img-wd" mode="aspectFill" />
       </view>
       <view style="flex-grow:7;">
-        <text class="address-text">中天会展城A区A3组团5栋</text>
+        <text class="address-text">{{item.address}}</text>
         <view>
           <text class="price-tag">¥</text>
-          <text class="price">500</text>
+          <text class="price">{{item.rental}}</text>
         </view>
       </view>
     </view>

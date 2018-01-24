@@ -6,24 +6,24 @@
 <view>
   <view class="divider"></view>
 
-  <view wx:for="{{test}}" bindtap="goDetail">
+  <view wx:for="{{list}}" wx:key="{{id}}" wx:for-item="item" bindtap="goDetail">
     <view class="flex-row padding-tb-30">
       <view class="flex-column-center" style="flex-grow:4;">
-        <image src="../../images/community_bg.jpg" class="img-wd" mode="aspectFill" />
+        <image src="{{imageUrl + item.house_img}}" class="img-wd" mode="aspectFill" />
       </view>
       <view style="flex-grow:6;">
-        <view class="address-text">中天会展城A区A3组团5栋</view>
-        <view class="house-type-text">2室1厅1卫</view>
+        <view class="address-text">{{item.address}}</view>
+        <view class="house-type-text">{{item.house_type}}</view>
         <view>
-          <text class="price">1300</text>
+          <text class="price">{{item.rental}}</text>
           <text class="price-tag"> 元/月</text>
         </view>
         <view class="flex-row-center-vertical">
           <view style="flex-grow: 8;">
             <text class="time">分享到期时间</text>
-            <text class="time-content">2015年05月02日</text>
+            <text class="time-content">{{item.due_time}}</text>
           </view>
-          <view class="time" style="flex-grow: 2;">观山湖区</view>
+          <view class="time" style="flex-grow: 2;">{{item.region}}</view>
         </view>
       </view>
     </view>
