@@ -11,12 +11,27 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    // 初始化登录
+    that.initLogin();
+
+  },
+
+  /**
+   * 登录初始化（获取code等）
+   */
+  initLogin: function(e) {
+    var that = this;
 
     // 登录获取登录凭证（code），然后向后台获取openid，保存在本地
     wx.login({
       success: res1 => {
 
         that.globalData.code = res1.code;
+        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        if (that.userInfoReadyCallback) {
+          that.userInfoReadyCallback(res1)
+        }
 
         // 获取用户信息
         wx.getSetting({
@@ -28,7 +43,7 @@ App({
                 scope: 'scope.userInfo',
                 success() {
                   that.login();
-                }, 
+                },
                 fail() {
                   that.showAuthModal();
                 }
@@ -40,7 +55,6 @@ App({
 
       }
     });
-
   },
 
   /**
@@ -61,6 +75,10 @@ App({
         networkUtil._post1('http://127.0.0.1:5000/mini_login', params,
           function (res2) {
             console.log(res2);
+            // 保存openid
+            if (res2.data.success) {
+              that.globalData.openid = res2.data.openid;
+            }
           },
           function (res2) {
 
@@ -77,12 +95,6 @@ App({
     var that = this;
     wx.openSetting({
       success: (res) => {
-        /*
-         * res.authSetting = {
-         *   "scope.userInfo": true,
-         *   "scope.userLocation": true
-         * }
-         */
         if (res.authSetting['scope.userInfo'])
           that.login();
         else
@@ -92,8 +104,9 @@ App({
   },
 
   globalData: {
-    userInfo: null,
+    userInfo: null, // 用户信息
     imageUrl: "http://oos.guipiaoke.com/",
-    code: ''
+    code: '', // 登录凭证
+    openid: '' // 用户唯一标识符
   }
 })

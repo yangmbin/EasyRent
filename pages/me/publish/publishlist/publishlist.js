@@ -2,13 +2,14 @@
 
 
 var networkUtil = require('../../../../utils/networkUtil.js');
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imageUrl: getApp().globalData.imageUrl,
+    imageUrl: app.globalData.imageUrl,
     baseUrl: 'http://127.0.0.1:5000/get_share_house_list/',
     hasMoreData: true, // 是否有更多数据的标志
     loadMoreText: false, // 用来显示列表下方的加载更多的提示语
@@ -70,7 +71,11 @@ Page({
     that.setData({
       loadMoreText: true
     });
-    var url = that.data.baseUrl + (++that.data.page);
+
+    if (!app.globalData.openid)
+      return;
+
+    var url = that.data.baseUrl + (++that.data.page) + '/' + app.globalData.openid;
     networkUtil._get(url,
       function (res) {
         if (res.data == null || res.data.length == 0) {
@@ -112,7 +117,7 @@ Page({
    */
   goDetail: function(e) {
     wx.navigateTo({
-      url: '../../../community/shareInfoDetail/shareInfoDetail',
+      url: '../../../community/shareInfoDetail/shareInfoDetail?id=' + e.currentTarget.id,
     })
   },
 
@@ -124,7 +129,11 @@ Page({
       title: '加载中',
     });
     var that = this;
-    var url = that.data.baseUrl + 1;
+
+    if (!app.globalData.openid)
+      return;
+
+    var url = that.data.baseUrl + 1 + '/' + app.globalData.openid;
     networkUtil._get(url,
       function (res) {
         that.setData({

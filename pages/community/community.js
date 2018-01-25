@@ -104,7 +104,7 @@ Page({
    */
   goDetail: function (e) {
     wx.navigateTo({
-      url: 'shareInfoDetail/shareInfoDetail',
+      url: 'shareInfoDetail/shareInfoDetail?id=' + e.currentTarget.id,
     })
   },
 

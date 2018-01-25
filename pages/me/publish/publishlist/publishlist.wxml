@@ -6,7 +6,7 @@
   <view class="divider"></view>
 
   <!--发布列表  -->
-  <view wx:for="{{list}}" wx:key="{{id}}" wx:for-item="item" bindtap="goDetail">
+  <view wx:for="{{list}}" wx:key="{{id}}" wx:for-item="item" bindtap="goDetail" id="{{item.id}}">
     <view class="flex-row padding-tb-30">
       <view class="flex-column-center" style="flex-grow:3;">
         <image src="{{imageUrl + item.house_img}}" class="img-wd" mode="aspectFill" />

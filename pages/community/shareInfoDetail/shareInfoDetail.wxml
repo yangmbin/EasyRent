@@ -1,15 +1,15 @@
 <!--pages/community/shareInfoDetail/shareInfoDetail.wxml-->
 <view>
   <view style="margin-bottom: 100rpx;">
-    <image src="../../../images/community_bg.jpg" class="img-wd" mode="aspectFill" />
+    <image wx:if="{{detail.house_img}}" src="{{imageUrl + detail.house_img}}" class="img-wd" mode="aspectFill" />
 
     <!--房屋详情  -->
     <view class="text-1 padding-lr-30 padding-tb-20">房屋详情</view>
     <view class="divider"></view>
 
     <view class="padding-30">
-      <view class="text-2">中天会展城A区A3组团5栋</view>
-      <view class="text-2">2室一厅</view>
+      <view class="text-2">{{detail.address}}</view>
+      <view class="text-2">{{detail.house_type}}</view>
     </view>
     <view class="divider"></view>
 
@@ -87,7 +87,7 @@
         <text class="text-4 padding-lr-10">收藏</text>
       </view>
     </view>
-    <view class="flex-column-center text-3 bottom-view-right">
+    <view class="flex-column-center text-3 bottom-view-right" bindtap="dial">
       立即预约
     </view>
   </view>

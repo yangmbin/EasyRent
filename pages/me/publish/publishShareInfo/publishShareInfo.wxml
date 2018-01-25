@@ -20,7 +20,7 @@
         {{regionArray[0][regionIndex[0]]}} {{regionArray[1][regionIndex[1]]}}
       </view>
     </picker>
-    <input class="text-gray" style="text-align:center;" placeholder="填写具体位置" />
+    <input bindinput="bindAddressInput" class="text-gray" style="text-align:center;" placeholder="填写具体位置" />
   </view>
 
   <!--户型  -->
@@ -38,7 +38,7 @@
   <view class="divider"></view>
   <view class="flex-column-center margin-tb-10">
     <view class="text-black-1">租金</view>
-    <input type="number" class="text-gray" style="text-align:center;" placeholder="请输入租金" />
+    <input bindinput="bindRentalInput" type="number" class="text-gray" style="text-align:center;" placeholder="请输入租金" />
   </view>
 
   <!--付款方式  -->
@@ -145,7 +145,7 @@
   <view class="flex-row padding-tb-20">
     <view class="checkbox">
       <view class="flex-row-center-vertical">
-        <input class="text-gray" style="text-align:center;" placeholder="请输入姓名" />
+        <input bindinput="bindContactInput" class="text-gray" style="text-align:center;" placeholder="请输入姓名" />
       </view>
     </view>
     <view class="checkbox">
@@ -160,7 +160,7 @@
   <view class="divider"></view>
   <view class="flex-column-center margin-tb-10">
     <view class="text-black-1">手机号</view>
-    <input type="number" class="text-gray" style="text-align:center;" placeholder="请输入手机号" />
+    <input bindinput="bindPhoneInput" type="number" class="text-gray" style="text-align:center;" placeholder="请输入手机号" />
   </view>
 
   <!--真实信息  -->
@@ -189,7 +189,7 @@
   </view>
 
   <!--提交按钮  -->
-  <view class="bottom-btn flex-column-center">
+  <view class="bottom-btn flex-column-center" bindtap="submit">
     <text>提交</text>
   </view>
 </view>

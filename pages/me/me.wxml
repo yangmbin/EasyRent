@@ -3,8 +3,8 @@
   <!-- <image src="../../images/avatar_bg.png" mode="widthFix"/> -->
   <!--头像  -->
   <view class="flex-column-center avatar-view">
-    <image src="{{avatar}}" class="avatar-view-image" />
-    <text class="text">{{nickname}}</text>
+    <image src="{{userInfo.avatarUrl}}" class="avatar-view-image" />
+    <text class="text">{{userInfo.nickName}}</text>
   </view>
 
   <!--横向按钮  -->
