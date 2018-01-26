@@ -38,37 +38,44 @@
     <view class="divider"></view>
 
     <!--主评论  -->
-    <view>
-      <view style="padding-bottom: 30rpx;">
-        <view class="flex-row margin-lrt-30">
-          <image src="../../../images/community_bg.jpg" class="avatar-view-image" />
-          <view class="flex-column-center">
-            <text class="text-2">微信名称</text>
-            <text class="text-5">2016.01.02</text>
+    <view wx:for="{{detail.comment}}" wx:for-item="item">
+      
+      <view bindtap="goReply" data-reply_user_id="{{item.user_id}}" data-share_house_comment_id="{{item.id}}" data-reply_user_nickname="{{item.nickname}}">
+        <view style="padding-bottom: 30rpx;">
+          <view class="flex-row margin-lrt-30">
+            <image src="{{item.avatar}}" class="avatar-view-image" />
+            <view class="flex-column">
+              <text class="text-2">{{item.nickname}}</text>
+              <text class="text-5">{{item.format_time}}</text>
+            </view>
           </view>
+          <view class="text-4 padding-lr-30" style="margin-left: 86rpx;">{{item.content}}</view>
         </view>
-        <view class="text-4 padding-lr-30" style="margin-left: 86rpx;">请问一下这个房子周边交通如何？</view>
+        <view class="divider"></view>
       </view>
-      <view class="divider"></view>
-    </view>
-    <!--回复  -->
-    <view style="margin-left: 86rpx;">
-      <view style="padding-bottom: 30rpx;">
-        <view class="flex-row margin-lrt-30">
-          <image src="../../../images/community_bg.jpg" class="avatar-view-image" />
-          <view class="flex-column-center">
-            <text class="text-2">微信名称</text>
-            <text class="text-5">2016.01.02</text>
+
+
+      <!--回复  -->
+      <view style="margin-left: 86rpx;" wx:for="{{item.reply}}" wx:for-item="inItem" bindtap="goReply" data-reply_user_id="{{inItem.user_id}}" data-share_house_comment_id="{{inItem.share_house_comment_id}}" data-reply_user_nickname="{{inItem.nickname}}">
+        <view style="padding-bottom: 30rpx;">
+          <view class="flex-row margin-lrt-30">
+            <image src="{{inItem.avatar}}" class="avatar-view-image" />
+            <view class="flex-column">
+              <text class="text-2">{{inItem.nickname}} 回复 {{inItem.reply_nickname}}</text>
+              <text class="text-5">{{inItem.format_time}}</text>
+            </view>
           </view>
+          <view class="text-4 padding-lr-30" style="margin-left: 86rpx;">{{inItem.content}}</view>
         </view>
-        <view class="text-4 padding-lr-30" style="margin-left: 86rpx;">请问一下这个房子周边交通如何？</view>
+        <view class="divider"></view>
       </view>
-      <view class="divider"></view>
     </view>
 
+
+
     <!--评论modal  -->
-    <modal hidden="{{hideModal}}" title="评论" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
-      <input type='text' placeholder="请输入内容" auto-focus/>
+    <modal hidden="{{hideModal}}" title="{{modal_title}}" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="submit_comment">
+      <input bindinput="bindCommentInput" type='text' placeholder="请输入内容" auto-focus/>
     </modal>
 
   </view>
