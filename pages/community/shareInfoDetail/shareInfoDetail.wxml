@@ -75,7 +75,7 @@
 
     <!--评论modal  -->
     <modal hidden="{{hideModal}}" title="{{modal_title}}" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="submit_comment">
-      <input bindinput="bindCommentInput" type='text' placeholder="请输入内容" auto-focus/>
+      <input bindinput="bindCommentInput" type='text' placeholder="请输入内容"/>
     </modal>
 
   </view>

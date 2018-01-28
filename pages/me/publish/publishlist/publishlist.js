@@ -10,7 +10,7 @@ Page({
    */
   data: {
     imageUrl: app.globalData.imageUrl,
-    baseUrl: 'http://127.0.0.1:5000/get_share_house_list/',
+    baseUrl: 'http://192.168.10.196:5000/get_share_house_list/',
     hasMoreData: true, // 是否有更多数据的标志
     loadMoreText: false, // 用来显示列表下方的加载更多的提示语
 
@@ -29,28 +29,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
@@ -101,12 +101,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
-  }, 
+
+  },
   /**
    * 跳转到发布页面（发布分享房源信息）
    */
-  goPublish: function(e) {
+  goPublish: function (e) {
     wx.navigateTo({
       url: '../publishShareInfo/publishShareInfo',
     })
@@ -115,7 +115,7 @@ Page({
   /**
    * 跳转到详情
    */
-  goDetail: function(e) {
+  goDetail: function (e) {
     wx.navigateTo({
       url: '../../../community/shareInfoDetail/shareInfoDetail?id=' + e.currentTarget.id,
     })
@@ -151,5 +151,48 @@ Page({
         wx.stopPullDownRefresh();
       }
     );
+  },
+
+  /**
+   * 删除
+   */
+  delete: function (e) {
+    var id = e.currentTarget.dataset.id
+    if (!app.globalData.openid)
+      return
+
+    wx.showModal({
+      title: '提示',
+      content: '确定删除吗？',
+      success: function (res) {
+        if (res.confirm) {
+          // 网络操作
+          wx.showLoading({
+            title: '加载中',
+          })
+          networkUtil._post1('http://192.168.10.196:5000/delete_share_house',
+            { 'id': id },
+            function (e) {
+              wx.hideLoading()
+              wx.showToast({
+                title: e.data.msg,
+                icon: 'none'
+              })
+              if (e.data.success) {
+                wx.redirectTo({
+                  url: 'publishlist',
+                })
+              }
+            },
+            function (e) {
+              wx.hideLoading()
+            })
+
+        } else if (res.cancel) {
+        }
+      }
+    })
+
+
   }
 })

@@ -113,7 +113,7 @@ Page({
 
         // 上传图片
         wx.uploadFile({
-          url: 'http://127.0.0.1:5000/uploadFileToServer',
+          url: 'http://192.168.10.196:5000/uploadFileToServer',
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
@@ -221,7 +221,7 @@ Page({
 
         // 上传图片
         wx.uploadFile({
-          url: 'http://127.0.0.1:5000/uploadFileToServer',
+          url: 'http://192.168.10.196:5000/uploadFileToServer',
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
@@ -256,7 +256,7 @@ Page({
 
         // 上传图片
         wx.uploadFile({
-          url: 'http://127.0.0.1:5000/uploadFileToServer',
+          url: 'http://192.168.10.196:5000/uploadFileToServer',
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
@@ -396,7 +396,7 @@ Page({
     console.log(params)
 
     // 网络请求
-    networkUtil._post1('http://127.0.0.1:5000/add_share_house', params,
+    networkUtil._post1('http://192.168.10.196:5000/add_share_house', params,
       function (res) {
         if (res.data.success) {
           wx.navigateBack({

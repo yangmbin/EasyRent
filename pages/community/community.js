@@ -9,7 +9,7 @@ Page({
    */
   data: {
     imageUrl: getApp().globalData.imageUrl,
-    baseUrl: 'http://127.0.0.1:5000/get_share_house_list/', 
+    baseUrl: 'http://192.168.10.196:5000/get_share_house_list/', 
     hasMoreData: true, // 是否有更多数据的标志
     loadMoreText: false, // 用来显示列表下方的加载更多的提示语
 

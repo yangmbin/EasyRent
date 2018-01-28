@@ -21,9 +21,9 @@
     </view>
     <view class="divider"></view>
     <view class="flex-row padding-tb-20" style="justify-content: flex-end;">
-      <view class="padding-lr-20 btn">分享</view>
-      <view class="padding-lr-20 btn">编辑</view>
-      <view class="padding-lr-20 btn">删除</view>
+      <!-- <view class="padding-lr-20 btn" catchtap="share" data-id="{{item.id}}">分享</view> -->
+      <!-- <view class="padding-lr-20 btn">编辑</view> -->
+      <view class="padding-lr-20 btn" catchtap="delete" data-id="{{item.id}}">删除</view>
     </view>
     <view class="divider"></view>
   </view>
