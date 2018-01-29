@@ -18,3 +18,29 @@ page {
 .vertical-btn-group-image {
   width:50%;flex-direction:row;display:flex;align-items:center;justify-content:flex-end;
 }
+
+.myView {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  margin-right: 20rpx;
+  bottom: 20vh;
+}
+
+.cs_button {
+  background-color: transparent;
+  border: 0px;
+  height: 80rpx;
+  width: 80rpx;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cs_button:after {
+  border: 0px;
+}
+
+.cs_image {
+  width: 80%;
+  height: 80%;
+}

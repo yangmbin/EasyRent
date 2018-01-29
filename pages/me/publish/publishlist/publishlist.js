@@ -10,7 +10,7 @@ Page({
    */
   data: {
     imageUrl: app.globalData.imageUrl,
-    baseUrl: 'http://192.168.10.196:5000/get_share_house_list/',
+    baseUrl: 'http://192.168.1.86:5000/get_share_house_list/',
     hasMoreData: true, // 是否有更多数据的标志
     loadMoreText: false, // 用来显示列表下方的加载更多的提示语
 
@@ -170,7 +170,7 @@ Page({
           wx.showLoading({
             title: '加载中',
           })
-          networkUtil._post1('http://192.168.10.196:5000/delete_share_house',
+          networkUtil._post1('http://192.168.1.86:5000/delete_share_house',
             { 'id': id },
             function (e) {
               wx.hideLoading()

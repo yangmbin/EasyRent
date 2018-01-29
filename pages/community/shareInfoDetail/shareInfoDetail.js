@@ -34,7 +34,7 @@ Page({
     var that = this;
     console.log(options.id)
     var id = options.id
-    networkUtil._get('http://192.168.10.196:5000/get_share_house_detail/' + id,
+    networkUtil._get('http://192.168.1.86:5000/get_share_house_detail/' + id,
       function (e) {
         console.log(e)
         that.setData({
@@ -239,14 +239,14 @@ Page({
     var url = ''
     var params = {}
     if (that.data.modal_title == '留言') {
-      url = 'http://192.168.10.196:5000/share_house_comment'
+      url = 'http://192.168.1.86:5000/share_house_comment'
       params = {
         'user_id': app.globalData.openid,
         'share_house_id': that.data.detail.id,
         'content': that.data.comment_input
       }
     } else {
-      url = 'http://192.168.10.196:5000/share_house_reply'
+      url = 'http://192.168.1.86:5000/share_house_reply'
       params = {
         'user_id': app.globalData.openid,
         'reply_user_id': that.data.reply_user_id,

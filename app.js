@@ -72,7 +72,7 @@ App({
           'nickname': that.globalData.userInfo.nickName,
           'avatar': that.globalData.userInfo.avatarUrl
         };
-        networkUtil._post1('http://192.168.10.196:5000/mini_login', params,
+        networkUtil._post1('http://192.168.1.86:5000/mini_login', params,
           function (res2) {
             console.log(res2);
             // 保存openid

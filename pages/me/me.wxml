@@ -63,13 +63,20 @@
     </view>
     <view class="divider" />
 
-    <view class="flex-row-center-vertical" style="padding: 20rpx;">
+    <!-- <view class="flex-row-center-vertical" style="padding: 20rpx;">
       <text class="vertical-btn-group-text">在线客服</text>
       <view class="vertical-btn-group-image">
         <image src="../../images/icon_right_1.png" style="width:32rpx;height:32rpx;" />
       </view>
     </view>
-    <view class="divider" />
+    <view class="divider" /> -->
+
+    <view class="myView">
+      <button class="cs_button" open-type="contact" session-from="weapp">
+        <image class="cs_image" src="../../images/icon_contact.png"></image>
+      </button>
+    </view>
+
   </view>
 
 </view>
