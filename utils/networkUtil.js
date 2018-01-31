@@ -12,7 +12,7 @@ function _get(url, success, fail) {
 
   console.log("----_get----start----");
   wx.request({
-    url: server + url,
+    url: url.indexOf('/') == 0 ? server + url : url,
     header: {
       // 'Content-Type': 'application/json'
     },
@@ -35,7 +35,7 @@ function _get(url, success, fail) {
 function _post(url, data, success, fail) {
   console.log("----_post----start----");
   wx.request({
-    url: server + url,
+    url: url.indexOf('/') == 0 ? server + url : url,
     header: {
       'content-type': 'application/x-www-form-urlencoded',
     },
@@ -60,7 +60,7 @@ function _post(url, data, success, fail) {
 function _post1(url, data, success, fail) {
   console.log("----_post1----start----");
   wx.request({
-    url: server + url,
+    url: url.indexOf('/') == 0 ? server + url : url,
     header: {
       'content-type': 'application/x-www-form-urlencoded',
     },
@@ -88,7 +88,7 @@ function _post1(url, data, success, fail) {
 function _post_json(url, data, success, fail) {
   console.log("----_post_json----start----");
   wx.request({
-    url: server + url,
+    url: url.indexOf('/') == 0 ? server + url : url,
     // header: {
     //     'content-type': 'application/json',
     // },
