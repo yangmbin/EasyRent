@@ -7,7 +7,9 @@
     "pages/me/me",
     "pages/me/publish/publishlist/publishlist",
     "pages/me/publish/publishShareInfo/publishShareInfo",
-    "pages/community/shareInfoDetail/shareInfoDetail"
+    "pages/community/shareInfoDetail/shareInfoDetail",
+    "pages/me/publish/likelist/likelist",
+    "pages/me/mycomment/mycomment"
   ],
   "window": {
     "backgroundTextStyle": "dark",

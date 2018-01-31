@@ -1,0 +1,28 @@
+<!--pages/me/publish/likelist/likelist.wxml-->
+<view class="divider"></view>
+
+<!--发布列表  -->
+<view wx:for="{{list}}" wx:key="{{id}}" wx:for-item="item" bindtap="goDetail" id="{{item.id}}">
+  <view class="flex-row padding-tb-30">
+    <view class="flex-column-center" style="flex-grow:3;">
+      <image src="{{imageUrl + item.house_img}}" class="img-wd" mode="aspectFill" />
+    </view>
+    <view style="flex-grow:7;">
+      <text class="address-text">{{item.address}}</text>
+      <view>
+        <text class="price-tag">¥</text>
+        <text class="price">{{item.rental}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="divider"></view>
+  <view class="flex-row padding-tb-20" style="justify-content: flex-end;">
+    <view class="padding-lr-20 btn" catchtap="delete" data-id="{{item.id}}">删除</view>
+  </view>
+  <view class="divider"></view>
+</view>
+
+<!--加载中 文字提示  -->
+<view wx:if="{{loadMoreText}}" class="bottom-loading">
+  <text class="bottom-loading-text">正在加载中...</text>
+</view>

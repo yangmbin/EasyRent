@@ -13,15 +13,23 @@ Page({
     pay_type: [],
     imageUrl: getApp().globalData.imageUrl,
 
-    hideModal: true,
-    modal_title: '',
-    comment_input: '',
+    input_hint: '',
+    input_focus: false,
     // 被回复人的nickname（回复）
     reply_user_nickname: '',
     // 被回复的人id（回复）
     reply_user_id: '',
     // 被回复的主评论id（回复）
-    share_house_comment_id: ''
+    share_house_comment_id: '',
+
+    // 发送模板消息给这个人（openid）
+    touser: '',
+    // 模板消息id
+    template_id: '',
+    // form-id
+    form_id: '',
+    // 评论内容（用于模板消息）
+    comment_input: ''
   },
 
   /**
@@ -34,12 +42,13 @@ Page({
     var that = this;
     console.log(options.id)
     var id = options.id
-    networkUtil._get('http://192.168.1.86:5000/get_share_house_detail/' + id,
+    networkUtil._get('/get_share_house_detail/' + id + '/' + app.globalData.openid,
       function (e) {
         console.log(e)
         that.setData({
           detail: e.data
         })
+        console.log(e.data)
 
         // 房屋设施
         var installationList = e.data.installation.split('_')
@@ -135,21 +144,12 @@ Page({
   },
 
   /**
-   * 取消评论
-   */
-  cancel: function () {
-    this.setData({
-      hideModal: true
-    });
-  },
-
-  /**
    * 点击评论按钮
    */
   goComment: function () {
     this.setData({
-      hideModal: false,
-      modal_title: '留言'
+      input_hint: '留言',
+      input_focus: true
     });
   },
 
@@ -199,20 +199,32 @@ Page({
     var _share_house_comment_id = e.currentTarget.dataset.share_house_comment_id
 
     this.setData({
-      hideModal: false,
-      modal_title: '回复 ' + _reply_user_nickname,
+      input_hint: '回复 ' + _reply_user_nickname,
+      input_focus: true,
       reply_user_nickname: _reply_user_nickname,
       reply_user_id: _reply_user_id,
       share_house_comment_id: _share_house_comment_id
     });
   },
 
+
   /**
-   * 绑定评论输入框函数
+   * 评论输入框聚焦
    */
-  bindCommentInput: function (e) {
+  bindfocus: function (e) {
+    console.log(e.detail.value)
     this.setData({
-      comment_input: e.detail.value
+      input_focus: true
+    })
+  },
+
+  /**
+   * 评论输入框失去焦点
+   */
+  bindblur: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+      input_focus: false
     })
   },
 
@@ -228,7 +240,8 @@ Page({
     })
 
     var that = this;
-    if (that.data.comment_input == '') {
+    var comment_input = e.detail.value.comment_input
+    if (comment_input == '') {
       wx.showToast({
         title: '请输入评论内容',
       })
@@ -238,21 +251,35 @@ Page({
     // 评论或回复
     var url = ''
     var params = {}
-    if (that.data.modal_title == '留言') {
-      url = 'http://192.168.1.86:5000/share_house_comment'
+    if (that.data.input_hint == '留言') {
+      url = '/share_house_comment'
       params = {
         'user_id': app.globalData.openid,
         'share_house_id': that.data.detail.id,
-        'content': that.data.comment_input
+        'content': comment_input,
       }
+
+      that.setData({
+        touser: that.data.detail.user_id,
+        template_id: '4JR6Q5dffsiSbmZaYSy7uuVcA-M_xYApPYJAgcNCV_8',
+        form_id: e.detail.formId,
+        comment_input: comment_input
+      })
     } else {
-      url = 'http://192.168.1.86:5000/share_house_reply'
+      url = '/share_house_reply'
       params = {
         'user_id': app.globalData.openid,
         'reply_user_id': that.data.reply_user_id,
         'share_house_comment_id': that.data.share_house_comment_id,
-        'content': that.data.comment_input
+        'content': comment_input
       }
+
+      that.setData({
+        touser: that.data.reply_user_id,
+        template_id: '4JR6Q5dffsiSbmZaYSy7urAmWlF5DALPV4YEWj6R8lY',
+        form_id: e.detail.formId,
+        comment_input: comment_input
+      })
     }
     networkUtil._post1(url, params,
       function (e) {
@@ -263,10 +290,13 @@ Page({
         })
         // 评论成功，刷新当前页面
         if (e.data.success) {
+          // 发送模板消息
+          that.sendTemplateMsg()
+
           that.setData({
-            hideModal: true
+            input_focus: false
           });
-          
+
           wx.redirectTo({
             url: 'shareInfoDetail?id=' + that.data.detail.id,
           })
@@ -276,5 +306,70 @@ Page({
         wx.hideLoading()
       })
 
+  },
+
+  /**
+   * 评论或回复成功后，发送模板消息（评论成功发送给发布信息的人，回复的成功发送给被回复的人）
+   */
+  sendTemplateMsg: function (e) {
+    var that = this
+    var get_access_token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx4dab771ae44ce9b2&secret=1eab4ec4f8b87935ea3080bb638ec9d0'
+    networkUtil._get(get_access_token_url,
+      function (e) {
+        console.log(e);
+        var token = e.data.access_token
+        var send_url = 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=' + token
+        var params = {
+          'touser': that.data.touser,
+          'template_id': that.data.template_id,
+          'page': 'pages/community/shareInfoDetail/shareInfoDetail?id=' + that.data.detail.id,
+          'form_id': that.data.form_id,
+          'data': {}
+        }
+        params.data.keyword1 = {
+          'value': app.globalData.userInfo.nickName,
+          'color': '#173177'
+        }
+        params.data.keyword2 = {
+          'value': that.data.comment_input,
+          'color': '#173177'
+        }
+
+        console.log(params)
+        networkUtil._post_json(send_url, params,
+          function (e) {
+            console.log(e)
+            console.log('模板消息发送成功')
+          })
+      })
+  },
+
+  /**
+   * 添加或取消收藏
+   */
+  goLikeOrDislike: function (e) {
+    var that = this;
+    var like = that.data.detail.like
+    var url = '';
+    if (like == 0)
+      url = '/share_house_like'
+    else
+      url = '/share_house_dislike'
+
+    var params = {
+      'user_id': app.globalData.openid,
+      'house_id': that.data.detail.id
+    }
+    networkUtil._post1(url, params,
+      function (e) {
+        wx.showToast({
+          title: e.data.msg,
+          icon: 'none'
+        })
+
+        that.setData({
+          ['detail.like']: e.data.like 
+        })
+      })
   }
 })

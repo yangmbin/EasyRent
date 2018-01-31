@@ -309,6 +309,14 @@ form {
   margin: 30rpx 30rpx 30rpx 30rpx;
 }
 
+.margin-lr-10 {
+  margin: 0 10rpx 0 10rpx;
+}
+
+.margin-lr-20 {
+  margin: 0 20rpx 0 20rpx;
+}
+
 .wd-match {
   width: 100%;
   height: 100%;

@@ -1,4 +1,8 @@
 import util from 'util.js';
+
+var server = 'https://guipiaoke.com'
+// var server = 'http://192.168.1.86:5000'
+
 /**
  * url 请求地址
  * success 成功的回调
@@ -6,9 +10,9 @@ import util from 'util.js';
  */
 function _get(url, success, fail) {
 
-  console.log("------start---_get----");
+  console.log("----_get----start----");
   wx.request({
-    url: url,
+    url: server + url,
     header: {
       // 'Content-Type': 'application/json'
     },
@@ -20,7 +24,7 @@ function _get(url, success, fail) {
     }
   });
 
-  console.log("----end-----_get----");
+  console.log("----_get----end----");
 }
 
 /**
@@ -29,9 +33,9 @@ function _get(url, success, fail) {
  * fail 失败的回调
  */
 function _post(url, data, success, fail) {
-  console.log("----_post--start-------");
+  console.log("----_post----start----");
   wx.request({
-    url: url,
+    url: server + url,
     header: {
       'content-type': 'application/x-www-form-urlencoded',
     },
@@ -44,7 +48,7 @@ function _post(url, data, success, fail) {
       fail(res);
     }
   });
-  console.log("----end-----_get----");
+  console.log("----_post----end----");
 }
 
 
@@ -54,9 +58,9 @@ function _post(url, data, success, fail) {
  * fail 失败的回调
  */
 function _post1(url, data, success, fail) {
-  console.log("----_post--start-------");
+  console.log("----_post1----start----");
   wx.request({
-    url: url,
+    url: server + url,
     header: {
       'content-type': 'application/x-www-form-urlencoded',
     },
@@ -69,7 +73,7 @@ function _post1(url, data, success, fail) {
       fail(res);
     }
   });
-  console.log("----end-----_get----");
+  console.log("----_post1----end----");
 }
 
 
@@ -82,9 +86,9 @@ function _post1(url, data, success, fail) {
 * fail 失败的回调
 */
 function _post_json(url, data, success, fail) {
-  console.log("----_post--start-------");
+  console.log("----_post_json----start----");
   wx.request({
-    url: url,
+    url: server + url,
     // header: {
     //     'content-type': 'application/json',
     // },
@@ -98,7 +102,7 @@ function _post_json(url, data, success, fail) {
     }
   });
 
-  console.log("----end----_post-----");
+  console.log("----_post_json----end----");
 }
 module.exports = {
   _get: _get,

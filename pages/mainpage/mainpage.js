@@ -7,10 +7,8 @@ Page({
    */
   data: {
     imageUrl: getApp().globalData.imageUrl,
-    // bannerUrl: 'http://localhost:5000/get_banner_house_list',
-    // recommendUrl: 'http://localhost:5000/get_recommend_house_list',
-    bannerUrl: 'https://guipiaoke.com/get_banner_house_list',
-    recommendUrl: 'https://guipiaoke.com/get_recommend_house_list',
+    bannerUrl: '/get_banner_house_list',
+    recommendUrl: '/get_recommend_house_list',
     bannerList: [],
     recommendList: []
   },

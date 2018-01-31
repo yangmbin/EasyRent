@@ -1,0 +1,44 @@
+/* pages/me/publish/likelist/likelist.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.publish-text {
+  color: #131313;
+  font-size: 26rpx;
+  padding-top: 26rpx;
+  padding-bottom: 26rpx;
+  padding-left: 20rpx;
+  background-color: white;
+}
+
+.img-wd {
+  width: 240rpx;
+  height: 190rpx;
+}
+
+.btn {
+  margin-right: 24rpx;
+  font-size: 26rpx;
+  color: rgba(254, 151, 7, 1);
+  border: 1rpx solid #fe9707;
+}
+
+.address-text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(19, 19, 19, 1);
+}
+
+.price-tag {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(254, 177, 82, 1);
+}
+
+.price {
+  font-size: 38rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(254, 177, 82, 1);
+}

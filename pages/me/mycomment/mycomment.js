@@ -1,7 +1,5 @@
-// pages/me/publish/publishlist/publishlist.js
-
-
-var networkUtil = require('../../../../utils/networkUtil.js');
+// pages/me/mycomment/mycomment.js
+var networkUtil = require('../../../utils/networkUtil.js');
 const app = getApp();
 Page({
 
@@ -10,7 +8,7 @@ Page({
    */
   data: {
     imageUrl: app.globalData.imageUrl,
-    baseUrl: '/get_share_house_list/',
+    baseUrl: '/my_share_house_comment_list/',
     hasMoreData: true, // 是否有更多数据的标志
     loadMoreText: false, // 用来显示列表下方的加载更多的提示语
 
@@ -103,21 +101,13 @@ Page({
   onShareAppMessage: function () {
 
   },
-  /**
-   * 跳转到发布页面（发布分享房源信息）
-   */
-  goPublish: function (e) {
-    wx.navigateTo({
-      url: '../publishShareInfo/publishShareInfo',
-    })
-  },
 
   /**
    * 跳转到详情
    */
   goDetail: function (e) {
     wx.navigateTo({
-      url: '../../../community/shareInfoDetail/shareInfoDetail?id=' + e.currentTarget.id,
+      url: '../../community/shareInfoDetail/shareInfoDetail?id=' + e.currentTarget.id,
     })
   },
 
@@ -170,8 +160,8 @@ Page({
           wx.showLoading({
             title: '加载中',
           })
-          networkUtil._post1('/delete_share_house',
-            { 'id': id },
+          networkUtil._post1('/delete_share_house_comment',
+            { 'comment_id': id},
             function (e) {
               wx.hideLoading()
               wx.showToast({
@@ -180,7 +170,7 @@ Page({
               })
               if (e.data.success) {
                 wx.redirectTo({
-                  url: 'publishlist',
+                  url: 'mycomment',
                 })
               }
             },

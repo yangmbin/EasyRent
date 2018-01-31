@@ -40,6 +40,12 @@ page {
   color: rgba(125, 125, 125, 1);
 }
 
+.text-6 {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(0, 0, 0, 1);
+}
+
 .bottom-view {
   height: 94rpx;
   position: fixed;
@@ -72,3 +78,11 @@ page {
 .margin-lrt-30 {
   margin: 30rpx 30rpx 0 30rpx;
 }
+
+.bottom-comment-view {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: blanchedalmond;
+}
+

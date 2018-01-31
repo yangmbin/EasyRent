@@ -94,5 +94,63 @@ Page({
     wx.navigateTo({
       url: 'publish/publishlist/publishlist',
     })
+  },
+
+  /**
+   * 跳转你收藏列表
+   */
+  goLikeList: function(e) {
+    wx.navigateTo({
+      url: 'publish/likelist/likelist',
+    })
+  },
+  
+  /**
+   * 跳转到我的留言
+   */
+  goMyComment: function(e) {
+    wx.navigateTo({
+      url: 'mycomment/mycomment',
+    })
+  },
+
+  /**
+   * 跳转到房租缴费
+   */
+  goRentalPay: function (e) {
+    wx.showToast({
+      title: '开发中',
+      icon: 'none'
+    })
+  },
+
+  /**
+   * 跳转到水电缴费
+   */
+  goWaterElecPay: function (e) {
+    wx.showToast({
+      title: '开发中',
+      icon: 'none'
+    })
+  },
+
+  /**
+   * 跳转到我的账单
+   */
+  goMyBill: function (e) {
+    wx.showToast({
+      title: '开发中',
+      icon: 'none'
+    })
+  },
+
+  /**
+   * 跳转到我的账户
+   */
+  goMyAccount: function (e) {
+    wx.showToast({
+      title: '开发中',
+      icon: 'none'
+    })
   }
 })

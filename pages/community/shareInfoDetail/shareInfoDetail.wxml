@@ -39,7 +39,7 @@
 
     <!--主评论  -->
     <view wx:for="{{detail.comment}}" wx:for-item="item">
-      
+
       <view bindtap="goReply" data-reply_user_id="{{item.user_id}}" data-share_house_comment_id="{{item.id}}" data-reply_user_nickname="{{item.nickname}}">
         <view style="padding-bottom: 30rpx;">
           <view class="flex-row margin-lrt-30">
@@ -74,9 +74,9 @@
 
 
     <!--评论modal  -->
-    <modal hidden="{{hideModal}}" title="{{modal_title}}" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="submit_comment">
-      <input bindinput="bindCommentInput" type='text' placeholder="请输入内容"/>
-    </modal>
+    <!-- <modal hidden="{{!input_focus}}" title="{{input_hint}}" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="submit_comment">
+      <input bindinput="bindCommentInput" type='text' placeholder="请输入内容" />
+    </modal> -->
 
   </view>
 
@@ -89,13 +89,23 @@
         <image src="../../../images/icon_edit.png" class="icon-wd"></image>
         <text class="text-4 padding-lr-10">留言</text>
       </view>
-      <view style="flex-grow: 1;" class="flex-row-center">
-        <image src="../../../images/icon_like.png" class="icon-wd"></image>
+      <view style="flex-grow: 1;" class="flex-row-center" bindtap="goLikeOrDislike">
+        <image src="{{detail.like == 0 ? '../../../images/icon_dislike.png' : '../../../images/icon_like.png'}}" class="icon-wd"></image>
         <text class="text-4 padding-lr-10">收藏</text>
       </view>
     </view>
     <view class="flex-column-center text-3 bottom-view-right" bindtap="dial">
       立即预约
     </view>
+  </view>
+
+  <!--底部评论布局，随着获取焦点，弹出软键盘并被软键盘顶起  -->
+  <view class="bottom-comment-view" hidden="{{!input_focus}}">
+    <form bindsubmit="submit_comment" report-submit="true" class="form-comment">
+      <view class="flex-row-center margin-lr-20">
+        <input name="comment_input" focus="{{input_focus}}" bindfocus="bindfocus" bindblur="bindblur" placeholder="{{input_hint}}" cursor-spacing="16" class="text-6" type="text" style="flex-grow:9;" />
+        <button formType="submit" class="text-4" style="flex-grow:1;">提交</button>
+      </view>
+    </form>
   </view>
 </view>

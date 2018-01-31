@@ -13,8 +13,7 @@ Page({
     longimage: '', // 长图
     lat: null, // 纬度
     lng: null, // 经度
-    baseUrl: 'https://guipiaoke.com/get_contact',
-    // baseUrl: 'http://localhost:5000/get_contact',
+    baseUrl: '/get_contact',
     phone:null // 联系电话
   },
 
